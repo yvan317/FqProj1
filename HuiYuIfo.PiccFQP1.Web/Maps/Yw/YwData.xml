@@ -1,0 +1,1525 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="YwData"   type="HuiYuIfo.PiccFQP1.Entity.Yw.YwData, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='YwDataResult' class='YwData'>
+      <result property="Did" column="dta1" />
+      <result property="Year" column="dta2" />
+      <result property="Month" column="dta3" />
+      <result property="AttachmentCount" column="dta4" />
+      <result property="Attachment" column="dta5" />
+      <result property="CalculateType" column="dta6" />
+      <result property="Status" column="dta7" />
+      <result property="Depart" column="dta8" />
+      <result property="Ywy" column="dta9" />
+      <result property="Jbr" column="dta10" />
+      <result property="Gsr" column="dta11" />
+      <result property="Qd" column="dta12" />
+      <result property="Qdm" column="dta13" />
+      <result property="Tk" column="dta14" />
+      <result property="Clxs" column="dta15" />
+      <result property="Bbr" column="dta16" />
+      <result property="Dzh" column="dta17" />
+      <result property="Cph" column="dta18" />
+      <result property="Dwxz" column="dta19" />
+      <result property="Zwh" column="dta20" />
+      <result property="Dws" column="dta21" />
+      <result property="Sfxb" column="dta22" />
+      <result property="Sfbbd" column="dta23" />
+      <result property="Sfbcsry" column="dta24" />
+      <result property="Sfbzr" column="dta25" />
+      <result property="Sfbcs" column="dta26" />
+      <result property="Sfbfdj" column="dta27" />
+      <result property="Dbdsz" column="dta28" />
+      <result property="Dbjq" column="dta29" />
+      <result property="Sflwxm" column="dta30" />
+      <result property="Synx" column="dta31" />
+      <result property="Yhkh" column="dta32" />
+      <result property="Ghsk" column="dta33" />
+      <result property="Ywly" column="dta34" />
+      <result property="Khq" column="dta35" />
+      <result property="Qdrq" column="dta36" />
+      <result property="Qbrq" column="dta37" />
+      <result property="Zbrq" column="dta38" />
+      <result property="Zbf" column="dta39" />
+      <result property="Sybf" column="dta40" />
+      <result property="Jqbf" column="dta41" />
+      <result property="Cqs" column="dta42" />
+      <result property="Cxcs" column="dta43" />
+      <result property="Sncbgs" column="dta44" />
+      <result property="Sfpa" column="dta45" />
+      <result property="Sfyz" column="dta46" />
+      <result property="Cx2c" column="dta47" />
+      <result property="Sfcgb" column="dta48" />
+      <result property="Bp" column="dta49" />
+      <result property="Bz" column="dta50" />
+      <result property="Tslx" column="dta51" />
+      <result property="Zjfy" column="dta52" />
+      <result property="Sfypz" column="dta53" />
+      <result property="Sjscfy" column="dta54" />
+      <result property="Sxfcyh" column="dta55" />
+      <result property="Sxfje" column="dta56" />
+      <result property="Sjzfbpfy" column="dta57" />
+      <result property="Sh" column="dta58" />
+      <result property="Zxzwfy" column="dta59" />
+      <result property="Zxzwfyjy" column="dta60" />
+      <result property="Zxzwfyjyjl" column="dta61" />
+      <result property="Btgpzce" column="dta62" />
+      <result property="Dxje" column="dta63" />
+      <result property="Jttxf" column="dta64" />
+      <result property="Cxydjl" column="dta65" />
+      <result property="Ghskjl" column="dta66" />
+      <result property="Zdxje" column="dta67" />
+      <result property="CreateId" column="dta68" />
+      <result property="CreateDate" column="dta69" />
+      <result property="ModifyId" column="dta70" />
+      <result property="ModifyDate" column="dta71" />
+      <result property="Szxbf" column="dta72" />
+      <result property="LastUpdate" column="dta73" />
+      <result property="Xz" column="dta74" />
+      <result property="CbOpinion" column="dta75" />
+      <result property="CwOpinion" column="dta76" />
+
+     
+      
+      <result property="YwyName" column="YwyName" />
+      <result property="DepartName" column="DepartName" />
+
+      <result property="Sxflx" column="Sxflx" />
+      <result property="Cx" column="Cx" />
+      <result property="Sfgh" column="Sfgh" />
+      <result property="Wfglcx" column="Wfglcx" />
+      <result property="Cx3c" column="Cx3c" />
+      <result property="Txm" column="Txm" />
+      <result property="Zj" column="Zj" />
+      <result property="qzbz" column="qzbz"/>
+
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <select id='YwDataPage' parameterClass='YwData' resultMap='YwDataResult'>
+      select
+      dta1,
+      dta2,
+      dta3,
+      dta4,
+      dta5,
+      dta6,
+      dta7,
+      dta8,
+      dta9,
+      dta10,
+      dta11,
+      dta12,
+      dta13,
+      dta14,
+      dta15,
+      dta16,
+      dta17,
+      dta18,
+      dta19,
+      dta20,
+      dta21,
+      dta22,
+      dta23,
+      dta24,
+      dta25,
+      dta26,
+      dta27,
+      dta28,
+      dta29,
+      dta30,
+      dta31,
+      dta32,
+      dta33,
+      dta34,
+      dta35,
+      dta36,
+      dta37,
+      dta38,
+      dta39,
+      dta40,
+      dta41,
+      dta42,
+      dta43,
+      dta44,
+      dta45,
+      dta46,
+      dta47,
+      dta48,
+      dta49,
+      dta50,
+      dta51,
+      dta52,
+      dta53,
+      dta54,
+      dta55,
+      dta56,
+      dta57,
+      dta58,
+      dta59,
+      dta60,
+      dta61,
+      dta62,
+      dta63,
+      dta64,
+      dta65,
+      dta66,
+      dta67,
+      dta68,
+      dta69,
+      dta70,
+      dta71,
+      dta72,
+      dta73,
+      dta74,
+      dta75,
+      dta76,
+      YwyName,
+      DepartName,Sxflx,Cx,Sfgh,Wfglcx,Cx3c,Txm,Zj,qzbz
+
+      from
+      (
+      select
+      row_number() over (order by dta2,dta3 )as rownum,
+      dta1,
+      dta2,
+      dta3,
+      dta4,
+      dta5,
+      dta6,
+      dta7,
+      dta8,
+      dta9,
+      dta10,
+      dta11,
+      dta12,
+      dta13,
+      dta14,
+      dta15,
+      dta16,
+      dta17,
+      dta18,
+      dta19,
+      dta20,
+      dta21,
+      dta22,
+      dta23,
+      dta24,
+      dta25,
+      dta26,
+      dta27,
+      dta28,
+      dta29,
+      dta30,
+      dta31,
+      dta32,
+      dta33,
+      dta34,
+      dta35,
+      dta36,
+      dta37,
+      dta38,
+      dta39,
+      dta40,
+      dta41,
+      dta42,
+      dta43,
+      dta44,
+      dta45,
+      dta46,
+      dta47,
+      dta48,
+      dta49,
+      dta50,
+      dta51,
+      dta52,
+      dta53,
+      dta54,
+      dta55,
+      dta56,
+      dta57,
+      dta58,
+      dta59,
+      dta60,
+      dta61,
+      dta62,
+      dta63,
+      dta64,
+      dta65,
+      dta66,
+      dta67,
+      dta68,
+      dta69,
+      dta70,
+      dta71,
+      dta72,
+      dta73,
+      dta74,
+      dta75,
+      dta76,
+      ndd3 as YwyName,
+      pra3 as DepartName,Sxflx,Cx,Sfgh,Wfglcx,Cx3c,Txm,Zj,qzbz
+
+      from	dta20 a
+      left join ndd29 on(dta9=ndd2)
+      left join pra34 on(dta8=pra2)
+      <dynamic prepend="WHERE">
+        <!--///////////////////////////////////////////////////承保定义////////////////////////////////////////////////////////////-->
+        <!--承保数据维护-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbList">
+          (isnull(dta7,'1')='1' or dta7=''  or isnull(dta7,'1')='2' ) and dta69 &gt;= #BegD#
+        </isEqual>
+        <!--承保导出未处理的数据-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbExportNoEnd">
+          (isnull(dta7,'1')='1' or dta7='' ) and dta69 &gt;= #BegD# and dta69 &lt; #EndD#
+        </isEqual>
+        <!--承保导出所有数据-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbExportAll">
+          (isnull(dta7,'1')='1' or dta7='' or isnull(dta7,'1')='2') and dta69 &gt;= #BegD# and dta69 &lt; #EndD#
+        </isEqual>
+        <!--承保审核-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbConfirmList">
+          (isnull(dta7,'1')='3' ) and dta69 &gt;= #BegD#
+        </isEqual>
+        <!--///////////////////////////////////////////////////业务员定义////////////////////////////////////////////////////////////-->
+        <!--业务员数据维护-->
+        <isEqual prepend="and" property="GetOpType" compareValue="YwyList">
+          (isnull(dta7,'1')='2' ) and dta69 &gt;= #BegD#
+        </isEqual>
+        <!--///////////////////////////////////////////////////财务审核////////////////////////////////////////////////////////////-->
+        <!--财务审核-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CwConfrimList">
+          (isnull(dta7,'1')='4' ) and dta69 &gt;= #BegD# and isnull(dta8,'') in(select upr5 from upr28 where upr3='depart' and upr2=#SysUserId#)
+        </isEqual>
+
+
+        <!--查询  部门权限-->
+        <isEqual prepend="and" property="GetOpType" compareValue="DataQuery">
+          isnull(dta8,'') in(select upr5 from upr28 where upr3='depart' and upr2=#SysUserId#)
+        </isEqual>
+        <isNotEqual prepend="and" property="Year" compareValue="0">
+          dta2=#Year#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Month" compareValue="0">
+          dta3=#Month#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="AttachmentCount" compareValue="0">
+          dta4=#AttachmentCount#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Attachment">
+          dta5=#Attachment#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="CalculateType">
+          dta6=#CalculateType#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Status">
+          dta7=#Status#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Depart">
+          dta8=#Depart#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ywy">
+          dta9=#Ywy#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Jbr">
+          dta10=#Jbr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Gsr">
+          dta11=#Gsr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Qd">
+          dta12=#Qd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Qdm">
+          dta13=#Qdm#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Tk">
+          dta14=#Tk#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Clxs">
+          dta15=#Clxs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bbr">
+          dta16=#Bbr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dzh">
+          dta17=#Dzh#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cph">
+          dta18=#Cph#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dwxz">
+          dta19=#Dwxz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Zwh">
+          dta20=#Zwh#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dws">
+          dta21=#Dws#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfxb">
+          dta22=#Sfxb#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbbd">
+          dta23=#Sfbbd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbcsry">
+          dta24=#Sfbcsry#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbzr">
+          dta25=#Sfbzr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbcs">
+          dta26=#Sfbcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbfdj">
+          dta27=#Sfbfdj#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbdsz">
+          dta28=#Dbdsz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbjq">
+          dta29=#Dbjq#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sflwxm">
+          dta30=#Sflwxm#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Synx">
+          dta31=#Synx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Yhkh">
+          dta32=#Yhkh#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ghsk">
+          dta33=#Ghsk#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ywly">
+          dta34=#Ywly#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Khq">
+          dta35=#Khq#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Qdrq" compareValue="1900-01-01">
+          datediff(dd,dta36,#Qdrq#)=0
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Qbrq" compareValue="1900-01-01">
+          datediff(dd,dta37,#Qbrq#)=0
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zbrq" compareValue="1900-01-01">
+          datediff(dd,dta38,#Zbrq#)=0
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zbf" compareValue="0">
+          dta39=#Zbf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sybf" compareValue="0">
+          dta40=#Sybf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Jqbf" compareValue="0">
+          dta41=#Jqbf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cqs" compareValue="0">
+          dta42=#Cqs#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Cxcs">
+          dta43=#Cxcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sncbgs">
+          dta44=#Sncbgs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfpa">
+          dta45=#Sfpa#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfyz">
+          dta46=#Sfyz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cx2c">
+          dta47=#Cx2c#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfcgb">
+          dta48=#Sfcgb#
+        </isNotEmpty>
+        
+        <isNotEqual prepend="and" property="Bp" compareValue="0">
+          dta49=#Bp#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Bz">
+          dta50=#Bz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Tslx">
+          dta51=#Tslx#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Zjfy" compareValue="0">
+          dta52=#Zjfy#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Sfypz">
+          dta53=#Sfypz#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Sjscfy" compareValue="0">
+          dta54=#Sjscfy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sxfcyh" compareValue="0">
+          dta55=#Sxfcyh#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sxfje" compareValue="0">
+          dta56=#Sxfje#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sjzfbpfy" compareValue="0">
+          dta57=#Sjzfbpfy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sh" compareValue="0">
+          dta58=#Sh#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zxzwfy" compareValue="0">
+          dta59=#Zxzwfy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zxzwfyjy" compareValue="0">
+          dta60=#Zxzwfyjy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zxzwfyjyjl" compareValue="0">
+          dta61=#Zxzwfyjyjl#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Btgpzce" compareValue="0">
+          dta62=#Btgpzce#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Dxje" compareValue="0">
+          dta63=#Dxje#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Jttxf" compareValue="0">
+          dta64=#Jttxf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cxydjl" compareValue="0">
+          dta65=#Cxydjl#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Ghskjl" compareValue="0">
+          dta66=#Ghskjl#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Cwback">
+          isnull(dta81,'N')=#Cwback#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cbback">
+          isnull(dta82,'N')=#Cbback#
+        </isNotEmpty>
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='YwDataList' parameterClass='YwData' resultMap='YwDataResult'>
+      select
+      dta1,
+      dta2,
+      dta3,
+      dta4,
+      dta5,
+      dta6,
+      dta7,
+      dta8,
+      dta9,
+      dta10,
+      dta11,
+      dta12,
+      dta13,
+      dta14,
+      dta15,
+      dta16,
+      dta17,
+      dta18,
+      dta19,
+      dta20,
+      dta21,
+      dta22,
+      dta23,
+      dta24,
+      dta25,
+      dta26,
+      dta27,
+      dta28,
+      dta29,
+      dta30,
+      dta31,
+      dta32,
+      dta33,
+      dta34,
+      dta35,
+      dta36,
+      dta37,
+      dta38,
+      dta39,
+      dta40,
+      dta41,
+      dta42,
+      dta43,
+      dta44,
+      dta45,
+      dta46,
+      dta47,
+      dta48,
+      dta49,
+      dta50,
+      dta51,
+      dta52,
+      dta53,
+      dta54,
+      dta55,
+      dta56,
+      dta57,
+      dta58,
+      dta59,
+      dta60,
+      dta61,
+      dta62,
+      dta63,
+      dta64,
+      dta65,
+      dta66,
+      dta67,
+      dta68,
+      dta69,
+      dta70,
+      dta71,
+      dta72,
+      dta73,
+      dta74,
+      dta75,
+      dta76,
+      ndd3 as YwyName,
+      pra3 as DepartName
+      ,Sxflx,Cx,Sfgh,Wfglcx,Cx3c,Txm,Zj,qzbz
+      from	dta20 a
+      left join ndd29 on(dta9=ndd2)
+      left join pra34 on(dta8=pra2)
+      <dynamic prepend="WHERE">
+        <!--///////////////////////////////////////////////////承保定义////////////////////////////////////////////////////////////-->
+        <!--承保数据维护-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbList">
+          (isnull(dta7,'1')='1' or dta7=''  or isnull(dta7,'1')='2' ) and dta69 &gt;= #BegD#
+        </isEqual>
+        <!--承保导出未处理的数据-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbExportNoEnd">
+          (isnull(dta7,'1')='1' or dta7='' ) and dta69 &gt;= #BegD# and dta69 &lt; #EndD#
+        </isEqual>
+        <!--承保导出所有数据-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbExportAll">
+          (isnull(dta7,'1')='1' or dta7='' or isnull(dta7,'1')='2') and dta69 &gt;= #BegD# and dta69 &lt; #EndD#
+        </isEqual>
+        <!--承保审核-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbConfirmList">
+          (isnull(dta7,'1')='3' ) and dta69 &gt;= #BegD#
+        </isEqual>
+        <!--///////////////////////////////////////////////////业务员定义////////////////////////////////////////////////////////////-->
+        <!--业务员数据维护-->
+        <isEqual prepend="and" property="GetOpType" compareValue="YwyList">
+          (isnull(dta7,'1')='2' ) and dta69 &gt;= #BegD#
+        </isEqual>
+        <!--///////////////////////////////////////////////////财务审核////////////////////////////////////////////////////////////-->
+        <!--财务审核-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CwConfrimList">
+          (isnull(dta7,'1')='4' ) and dta69 &gt;= #BegD# and isnull(dta8,'') in(select upr5 from upr28 where upr3='depart' and upr2=#SysUserId#)
+        </isEqual>
+
+
+        <!--查询  部门权限-->
+        <isEqual prepend="and" property="GetOpType" compareValue="DataQuery">
+          isnull(dta8,'') in(select upr5 from upr28 where upr3='depart' and upr2=#SysUserId#)
+        </isEqual>
+        <!--///////////////////////////////////////////////////////结帐处理///////////////////////////////////////////////////////-->
+        <isEqual prepend="and" property="GetOpType" compareValue="JzGetNoEnd">
+          isnull(dta7,'1')&lt;&gt;'4' and dta69 &gt;= #BegD# and dta69 &lt; #EndD#
+        </isEqual>
+
+
+
+        <isNotEqual prepend="and" property="Year" compareValue="0">
+          dta2=#Year#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Month" compareValue="0">
+          dta3=#Month#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="AttachmentCount" compareValue="0">
+          dta4=#AttachmentCount#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Attachment">
+          dta5=#Attachment#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="CalculateType">
+          dta6=#CalculateType#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Status">
+          dta7=#Status#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Depart">
+          dta8=#Depart#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ywy">
+          dta9=#Ywy#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Jbr">
+          dta10=#Jbr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Gsr">
+          dta11=#Gsr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Qd">
+          dta12=#Qd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Qdm">
+          dta13=#Qdm#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Tk">
+          dta14=#Tk#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Clxs">
+          dta15=#Clxs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bbr">
+          dta16=#Bbr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dzh">
+          dta17=#Dzh#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cph">
+          dta18=#Cph#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dwxz">
+          dta19=#Dwxz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Zwh">
+          dta20=#Zwh#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dws">
+          dta21=#Dws#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfxb">
+          dta22=#Sfxb#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbbd">
+          dta23=#Sfbbd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbcsry">
+          dta24=#Sfbcsry#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbzr">
+          dta25=#Sfbzr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbcs">
+          dta26=#Sfbcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbfdj">
+          dta27=#Sfbfdj#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbdsz">
+          dta28=#Dbdsz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbjq">
+          dta29=#Dbjq#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sflwxm">
+          dta30=#Sflwxm#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Synx">
+          dta31=#Synx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Yhkh">
+          dta32=#Yhkh#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ghsk">
+          dta33=#Ghsk#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ywly">
+          dta34=#Ywly#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Khq">
+          dta35=#Khq#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Qdrq" compareValue="1900-01-01">
+          datediff(dd,dta36,#Qdrq#)=0
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Qbrq" compareValue="1900-01-01">
+          datediff(dd,dta37,#Qbrq#)=0
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zbrq" compareValue="1900-01-01">
+          datediff(dd,dta38,#Zbrq#)=0
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zbf" compareValue="0">
+          dta39=#Zbf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sybf" compareValue="0">
+          dta40=#Sybf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Jqbf" compareValue="0">
+          dta41=#Jqbf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cqs" compareValue="0">
+          dta42=#Cqs#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Cxcs">
+          dta43=#Cxcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sncbgs">
+          dta44=#Sncbgs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfpa">
+          dta45=#Sfpa#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfyz">
+          dta46=#Sfyz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cx2c">
+          dta47=#Cx2c#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfcgb">
+          dta48=#Sfcgb#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Bp" compareValue="0">
+          dta49=#Bp#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Bz">
+          dta50=#Bz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Tslx">
+          dta51=#Tslx#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Zjfy" compareValue="0">
+          dta52=#Zjfy#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Sfypz">
+          dta53=#Sfypz#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Sjscfy" compareValue="0">
+          dta54=#Sjscfy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sxfcyh" compareValue="0">
+          dta55=#Sxfcyh#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sxfje" compareValue="0">
+          dta56=#Sxfje#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sjzfbpfy" compareValue="0">
+          dta57=#Sjzfbpfy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sh" compareValue="0">
+          dta58=#Sh#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zxzwfy" compareValue="0">
+          dta59=#Zxzwfy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zxzwfyjy" compareValue="0">
+          dta60=#Zxzwfyjy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zxzwfyjyjl" compareValue="0">
+          dta61=#Zxzwfyjyjl#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Btgpzce" compareValue="0">
+          dta62=#Btgpzce#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Dxje" compareValue="0">
+          dta63=#Dxje#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Jttxf" compareValue="0">
+          dta64=#Jttxf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cxydjl" compareValue="0">
+          dta65=#Cxydjl#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Ghskjl" compareValue="0">
+          dta66=#Ghskjl#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Cwback">
+          isnull(dta81,'N')=#Cwback#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cbback">
+          isnull(dta82,'N')=#Cbback#
+        </isNotEmpty>
+      </dynamic>
+      order by a.dta2,a.dta3
+    </select>
+
+    <select id='YwDataExport' parameterClass='YwData' resultMap='YwDataResult'>
+      select
+      dta1,
+      dta2,
+      dta3,
+      dta4,
+      dta5,
+      dta6,
+      dta7,
+      dta8,
+      dta9,
+      dta10,
+      dta11,
+      dta12,
+      dta13,
+      dta14,
+      dta15,
+      dta16,
+      dta17,
+      dta18,
+      dta19,
+      dta20,
+      dta21,
+      dta22,
+      dta23,
+      dta24,
+      dta25,
+      dta26,
+      dta27,
+      dta28,
+      dta29,
+      dta30,
+      dta31,
+      dta32,
+      dta33,
+      dta34,
+      dta35,
+      dta36,
+      dta37,
+      dta38,
+      dta39,
+      dta40,
+      dta41,
+      dta42,
+      dta43,
+      dta44,
+      dta45,
+      dta46,
+      dta47,
+      dta48,
+      dta49,
+      dta50,
+      dta51,
+      dta52,
+      dta53,
+      dta54,
+      dta55,
+      dta56,
+      dta57,
+      dta58,
+      dta59,
+      dta60,
+      dta61,
+      dta62,
+      dta63,
+      dta64,
+      dta65,
+      dta66,
+      dta67,
+      dta68,
+      dta69,
+      dta70,
+      dta71,
+      dta72,
+      dta73,
+      dta74,
+      dta75,
+      dta76,
+      ndd3 as YwyName,
+      pra3 as DepartName
+      ,Sxflx,Cx,Sfgh,Wfglcx,Cx3c,Txm,Zj,qzbz
+      from	dta20 a
+      left join ndd29 on(dta9=ndd2)
+      left join pra34 on(dta8=pra2)
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Depart">
+          dta8=#Depart#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ywy">
+          dta9=#Ywy#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="BegD" compareValue="1900-01-01">
+          dta69 &gt;= #BegD#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="EndD" compareValue="1900-01-01">
+          dta69 &lt; #EndD#
+        </isNotEqual>
+        <isEqual prepend="and" property="GetOpType" compareValue="departPri">
+           isnull(dta8,'') in(select upr5 from upr28 where upr3='depart' and upr2=#SysUserId#)
+        </isEqual>
+      </dynamic>
+      order by dta9
+    </select>
+
+
+    <select id='YwDataCount' parameterClass='YwData' resultType='int'>
+      select
+      count(*)
+
+      from	dta20 a
+      left join ndd29 on(dta9=ndd2)
+      left join pra34 on(dta8=pra2)
+      <dynamic prepend="WHERE">
+        <!--///////////////////////////////////////////////////承保定义////////////////////////////////////////////////////////////-->
+        <!--承保数据维护-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbList">
+          (isnull(dta7,'1')='1' or dta7=''  or isnull(dta7,'1')='2' ) and dta69 &gt;= #BegD#
+        </isEqual>
+        <!--承保导出未处理的数据-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbExportNoEnd">
+          (isnull(dta7,'1')='1' or dta7='' ) and dta69 &gt;= #BegD# and dta69 &lt; #EndD#
+        </isEqual>
+        <!--承保导出所有数据-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbExportAll">
+          (isnull(dta7,'1')='1' or dta7='' or isnull(dta7,'1')='2') and dta69 &gt;= #BegD# and dta69 &lt; #EndD#
+        </isEqual>
+        <!--承保审核-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CbConfirmList">
+          (isnull(dta7,'1')='3' ) and dta69 &gt;= #BegD#
+        </isEqual>
+        <!--///////////////////////////////////////////////////业务员定义////////////////////////////////////////////////////////////-->
+        <!--业务员数据维护-->
+        <isEqual prepend="and" property="GetOpType" compareValue="YwyList">
+          (isnull(dta7,'1')='2' ) and dta69 &gt;= #BegD#
+        </isEqual>
+        <!--///////////////////////////////////////////////////财务审核////////////////////////////////////////////////////////////-->
+        <!--财务审核-->
+        <isEqual prepend="and" property="GetOpType" compareValue="CwConfrimList">
+          (isnull(dta7,'1')='4' ) and dta69 &gt;= #BegD# and isnull(dta8,'') in(select upr5 from upr28 where upr3='depart' and upr2=#SysUserId#)
+        </isEqual>
+
+
+        <!--查询  部门权限-->
+        <isEqual prepend="and" property="GetOpType" compareValue="DataQuery">
+          isnull(dta8,'') in(select upr5 from upr28 where upr3='depart' and upr2=#SysUserId#)
+        </isEqual>
+        <isNotEqual prepend="and" property="Year" compareValue="0">
+          dta2=#Year#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Month" compareValue="0">
+          dta3=#Month#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="AttachmentCount" compareValue="0">
+          dta4=#AttachmentCount#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Attachment">
+          dta5=#Attachment#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="CalculateType">
+          dta6=#CalculateType#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Status">
+          dta7=#Status#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Depart">
+          dta8=#Depart#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ywy">
+          dta9=#Ywy#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Jbr">
+          dta10=#Jbr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Gsr">
+          dta11=#Gsr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Qd">
+          dta12=#Qd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Qdm">
+          dta13=#Qdm#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Tk">
+          dta14=#Tk#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Clxs">
+          dta15=#Clxs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bbr">
+          dta16=#Bbr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dzh">
+          dta17=#Dzh#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cph">
+          dta18=#Cph#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dwxz">
+          dta19=#Dwxz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Zwh">
+          dta20=#Zwh#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dws">
+          dta21=#Dws#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfxb">
+          dta22=#Sfxb#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbbd">
+          dta23=#Sfbbd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbcsry">
+          dta24=#Sfbcsry#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbzr">
+          dta25=#Sfbzr#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbcs">
+          dta26=#Sfbcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbfdj">
+          dta27=#Sfbfdj#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbdsz">
+          dta28=#Dbdsz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbjq">
+          dta29=#Dbjq#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sflwxm">
+          dta30=#Sflwxm#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Synx">
+          dta31=#Synx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Yhkh">
+          dta32=#Yhkh#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ghsk">
+          dta33=#Ghsk#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ywly">
+          dta34=#Ywly#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Khq">
+          dta35=#Khq#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Qdrq" compareValue="1900-01-01">
+          datediff(dd,dta36,#Qdrq#)=0
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Qbrq" compareValue="1900-01-01">
+          datediff(dd,dta37,#Qbrq#)=0
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zbrq" compareValue="1900-01-01">
+          datediff(dd,dta38,#Zbrq#)=0
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zbf" compareValue="0">
+          dta39=#Zbf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sybf" compareValue="0">
+          dta40=#Sybf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Jqbf" compareValue="0">
+          dta41=#Jqbf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cqs" compareValue="0">
+          dta42=#Cqs#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Cxcs">
+          dta43=#Cxcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sncbgs">
+          dta44=#Sncbgs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfpa">
+          dta45=#Sfpa#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfyz">
+          dta46=#Sfyz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cx2c">
+          dta47=#Cx2c#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfcgb">
+          dta48=#Sfcgb#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Bp" compareValue="0">
+          dta49=#Bp#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Bz">
+          dta50=#Bz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Tslx">
+          dta51=#Tslx#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Zjfy" compareValue="0">
+          dta52=#Zjfy#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Sfypz">
+          dta53=#Sfypz#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Sjscfy" compareValue="0">
+          dta54=#Sjscfy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sxfcyh" compareValue="0">
+          dta55=#Sxfcyh#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sxfje" compareValue="0">
+          dta56=#Sxfje#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sjzfbpfy" compareValue="0">
+          dta57=#Sjzfbpfy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sh" compareValue="0">
+          dta58=#Sh#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zxzwfy" compareValue="0">
+          dta59=#Zxzwfy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zxzwfyjy" compareValue="0">
+          dta60=#Zxzwfyjy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zxzwfyjyjl" compareValue="0">
+          dta61=#Zxzwfyjyjl#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Btgpzce" compareValue="0">
+          dta62=#Btgpzce#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Dxje" compareValue="0">
+          dta63=#Dxje#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Jttxf" compareValue="0">
+          dta64=#Jttxf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cxydjl" compareValue="0">
+          dta65=#Cxydjl#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Ghskjl" compareValue="0">
+          dta66=#Ghskjl#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Cwback">
+          isnull(dta81,'N')=#Cwback#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cbback">
+          isnull(dta82,'N')=#Cbback#
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id='YwDataSelect' parameterClass='YwData' resultMap='YwDataResult'>
+      select
+      dta1,
+      dta2,
+      dta3,
+      dta4,
+      dta5,
+      dta6,
+      dta7,
+      dta8,
+      dta9,
+      dta10,
+      dta11,
+      dta12,
+      dta13,
+      dta14,
+      dta15,
+      dta16,
+      dta17,
+      dta18,
+      dta19,
+      dta20,
+      dta21,
+      dta22,
+      dta23,
+      dta24,
+      dta25,
+      dta26,
+      dta27,
+      dta28,
+      dta29,
+      dta30,
+      dta31,
+      dta32,
+      dta33,
+      dta34,
+      dta35,
+      dta36,
+      dta37,
+      dta38,
+      dta39,
+      dta40,
+      dta41,
+      dta42,
+      dta43,
+      dta44,
+      dta45,
+      dta46,
+      dta47,
+      dta48,
+      dta49,
+      dta50,
+      dta51,
+      dta52,
+      dta53,
+      dta54,
+      dta55,
+      dta56,
+      dta57,
+      dta58,
+      dta59,
+      dta60,
+      dta61,
+      dta62,
+      dta63,
+      dta64,
+      dta65,
+      dta66,
+      dta67,
+      dta68,
+      dta69,
+      dta70,
+      dta71,
+      dta72,
+      dta73,
+      dta74,
+      dta75,
+      dta76,
+      ndd3 as YwyName,
+      pra3 as DepartName
+      ,Sxflx,Cx,Sfgh,Wfglcx,Cx3c,Txm,Zj,qzbz
+      from	dta20 a
+      left join ndd29 on(dta9=ndd2)
+      left join pra34 on(dta8=pra2)
+      where dta1=#Did#
+    </select>
+
+    <insert id='YwDataInsert' parameterClass='YwData'>
+      insert into dta20
+      (
+      dta6,
+      dta7,
+      dta8,
+      dta9,
+      dta10,
+      dta11,
+      dta12,
+      dta13,
+      dta14,
+      dta15,
+      dta16,
+      dta17,
+      dta18,
+      dta19,
+      dta20,
+      dta21,
+      dta23,
+      dta24,
+      dta25,
+      dta26,
+      dta27,
+      dta29,
+      dta30,
+      dta31,
+      dta32,
+      dta33,
+      dta35,
+      dta36,
+      dta37,
+      dta38,
+      dta39,
+      dta40,
+      dta41,
+      dta42,
+      dta43,
+      dta44,
+      dta45,
+      dta46,
+      dta47,
+      dta48,
+      dta49,
+      dta50,
+      dta51,
+      dta52,
+      dta55,
+      dta56,
+      dta57,
+      dta58,
+      dta59,
+      dta60,
+      dta61,
+      dta62,
+      dta63,
+      dta64,
+      dta65,
+      dta66,
+      dta2,
+      dta3,
+      dta22,
+      dta28,
+      dta34,
+      dta68,
+      dta69,
+      dta72,
+      dta74,
+      dta75,
+      dta76,Sxflx,Cx,Sfgh,Wfglcx,Cx3c,Txm,Zj,qzbz
+      )
+      values
+      (
+      #CalculateType#,
+      #Status#,
+      #Depart#,
+      #Ywy#,
+      #Jbr#,
+      #Gsr#,
+      #Qd#,
+      #Qdm#,
+      #Tk#,
+      #Clxs#,
+      #Bbr#,
+      #Dzh#,
+      #Cph#,
+      #Dwxz#,
+      #Zwh#,
+      #Dws#,
+      #Sfbbd#,
+      #Sfbcsry#,
+      #Sfbzr#,
+      #Sfbcs#,
+      #Sfbfdj#,
+      #Dbjq#,
+      #Sflwxm#,
+      #Synx#,
+      #Yhkh#,
+      #Ghsk#,
+      #Khq#,
+      #Qdrq#,
+      #Qbrq#,
+      #Zbrq#,
+      #Zbf#,
+      #Sybf#,
+      #Jqbf#,
+      #Cqs#,
+      #Cxcs#,
+      #Sncbgs#,
+      #Sfpa#,
+      #Sfyz#,
+      #Cx2c#,
+      #Sfcgb#,
+      #Bp#,
+      #Bz#,
+      #Tslx#,
+      #Zjfy#,
+      #Sxfcyh#,
+      #Sxfje#,
+      #Sjzfbpfy#,
+      #Sh#,
+      #Zxzwfy#,
+      #Zxzwfyjy#,
+      #Zxzwfyjyjl#,
+      #Btgpzce#,
+      #Dxje#,
+      #Jttxf#,
+      #Cxydjl#,
+      #Ghskjl#,
+      #Year#,
+      #Month#,
+      #Sfxb#,
+      #Dbdsz#,
+      #Ywly#,
+      #SysUserId#,
+      getdate(),
+      #Szxbf#,
+      #Xz#,
+      #CbOpinion#,
+      #CwOpinion#,#Sxflx#,#Cx#,#Sfgh#,#Wfglcx#,#Cx3c#,#Txm#,#Zj#,#qzbz#
+      <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as dta1</selectKey>
+      )
+    </insert>
+
+    <update id='YwDataAttUpdate' >
+      update dta20 set dta4=isnull(dta4,0)+1 where dta1=#Did#
+    </update>
+    <update id='YwDataAttUpdateSub' >
+      update dta20 set dta4=isnull(dta4,0)-1 where dta1=#Did#
+    </update>
+
+    <update id='YwDataAttClear' >
+      update dta20 set dta4=0 where dta1=#Did#
+    </update>
+    
+    
+    <update id='YwDataUpdate' parameterClass='YwData'>
+      update dta20 set
+      dta2=#Year#,
+      dta3=#Month#,
+      dta4=#AttachmentCount#,
+      dta6=#CalculateType#,
+      dta7=#Status#,
+      dta8=#Depart#,
+      dta9=#Ywy#,
+      dta10=#Jbr#,
+      dta11=#Gsr#,
+      dta12=#Qd#,
+      dta13=#Qdm#,
+      dta14=#Tk#,
+      dta15=#Clxs#,
+      dta16=#Bbr#,
+      dta17=#Dzh#,
+      dta18=#Cph#,
+      dta19=#Dwxz#,
+      dta20=#Zwh#,
+      dta21=#Dws#,
+      dta22=#Sfxb#,
+      dta23=#Sfbbd#,
+      dta24=#Sfbcsry#,
+      dta25=#Sfbzr#,
+      dta26=#Sfbcs#,
+      dta27=#Sfbfdj#,
+      dta28=#Dbdsz#,
+      dta29=#Dbjq#,
+      dta30=#Sflwxm#,
+      dta31=#Synx#,
+      dta32=#Yhkh#,
+      dta33=#Ghsk#,
+      dta34=#Ywly#,
+      dta35=#Khq#,
+      dta36=#Qdrq#,
+      dta37=#Qbrq#,
+      dta38=#Zbrq#,
+      dta39=#Zbf#,
+      dta40=#Sybf#,
+      dta41=#Jqbf#,
+      dta42=#Cqs#,
+      dta43=#Cxcs#,
+      dta44=#Sncbgs#,
+      dta45=#Sfpa#,
+      dta46=#Sfyz#,
+      dta47=#Cx2c#,
+      dta48=#Sfcgb#,
+      dta49=#Bp#,
+      dta50=#Bz#,
+      dta51=#Tslx#,
+      dta52=#Zjfy#,
+      dta53=#Sfypz#,
+      dta54=#Sjscfy#,
+      dta55=#Sxfcyh#,
+      dta56=#Sxfje#,
+      dta57=#Sjzfbpfy#,
+      dta58=#Sh#,
+      dta59=#Zxzwfy#,
+      dta60=#Zxzwfyjy#,
+      dta61=#Zxzwfyjyjl#,
+      dta62=#Btgpzce#,
+      dta63=#Dxje#,
+      dta64=#Jttxf#,
+      dta65=#Cxydjl#,
+      dta66=#Ghskjl#,
+      dta67=#Zdxje#,
+      dta72=#Szxbf#,
+      dta70=#SysUserId#,
+      dta71=getdate(),
+      dta74=#Xz#,
+      dta75=#CbOpinion#,
+      dta76=#CwOpinion#,
+      dta77=#CbSubmit#,
+      dta78=#YwySubmit#,
+      dta79=#CbConfirm#,
+      dta80=#CwConfirm#,
+      dta81=#Cwback#,
+      dta82=#Cbback#
+      ,Sxflx=#Sxflx#,Cx=#Cx#,Sfgh=#Sfgh#,Wfglcx=#Wfglcx#,Cx3c=#Cx3c#,Txm=#Txm#,Zj=#Zj#,qzbz=#qzbz#
+      where
+      dta1=#Did# and dta73=#LastUpdate#
+    </update>
+
+    <delete id='YwDataDelete' parameterClass='YwData'>
+      delete from dta20
+      where
+      dta1=#Did#
+    </delete>
+  </statements>
+</sqlMap>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="XtmConfig"   type="HuiYuIfo.PiccFQP1.Entity.Xtm.XtmConfig, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='XtmConfigResult' class='XtmConfig'>
+      <result property="Did" column="sys1" />
+      <result property="Config1" column="sys2" />
+      <result property="Config2" column="sys3" />
+      <result property="Config3" column="sys4" />
+      <result property="Config4" column="sys5" />
+      <result property="CreateId" column="sys6" />
+      <result property="CreateDate" column="sys7" />
+      <result property="ModifyId" column="sys8" />
+      <result property="ModifyDate" column="sys9" />
+      <result property="Bcsry" column="sys10"/>
+      <result property="Bdqx" column="sys11"/>
+      <result property="Bzrx" column="sys12"/>
+      <result property="Bfdj" column="sys13"/>
+      <result property="Sz100" column="sys14"/>
+      <result property="Tx" column="sys15"/>
+      <result property="Yzpa" column="sys16"/>
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <select id='XtmConfigPage' parameterClass='XtmConfig' resultMap='XtmConfigResult'>
+      select
+      sys1,
+      sys2,
+      sys3,
+      sys4,
+      sys5,
+      sys6,
+      sys7,
+      sys8,
+      sys9,
+      sys10,
+      sys11,
+      sys12,
+      sys13,
+      sys14,
+      sys15,
+      sys16
+
+      from
+      (
+      select
+      row_number() over (order by sys1,sys2 )as rownum,
+      sys1,
+      sys2,
+      sys3,
+      sys4,
+      sys5,
+      sys6,
+      sys7,
+      sys8,
+      sys9,
+      sys10,
+      sys11,
+      sys12,
+      sys13,
+      sys14,
+      sys15,
+      sys16
+
+      from	sys11 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Config1">
+          sys2=#Config1#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Config2">
+          sys3=#Config2#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Config3">
+          sys4=#Config3#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Config4">
+          sys5=#Config4#
+        </isNotEmpty>
+
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='XtmConfigList' parameterClass='XtmConfig' resultMap='XtmConfigResult'>
+      select
+      sys1,
+      sys2,
+      sys3,
+      sys4,
+      sys5,
+      sys6,
+      sys7,
+      sys8,
+      sys9,
+      sys10,
+      sys11,
+      sys12,
+      sys13,
+      sys14,
+      sys15,
+      sys16
+
+      from	sys11 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Config1">
+          sys2=#Config1#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Config2">
+          sys3=#Config2#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Config3">
+          sys4=#Config3#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Config4">
+          sys5=#Config4#
+        </isNotEmpty>
+
+      </dynamic>
+      order by sys1,sys2
+    </select>
+
+    <select id='XtmConfigCount' parameterClass='XtmConfig' resultType='int'>
+      select
+      count(*)
+      from	sys11 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Config1">
+          sys2=#Config1#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Config2">
+          sys3=#Config2#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Config3">
+          sys4=#Config3#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Config4">
+          sys5=#Config4#
+        </isNotEmpty>
+
+      </dynamic>
+    </select>
+
+    <select id='XtmConfigSelect' parameterClass='XtmConfig' resultMap='XtmConfigResult'>
+      select
+      sys1,
+      sys2,
+      sys3,
+      sys4,
+      sys5,
+      sys6,
+      sys7,
+      sys8,
+      sys9,
+      sys10,
+      sys11,
+      sys12,
+      sys13,
+      sys14,
+      sys15,
+      sys16
+
+      from	sys11 a
+
+    </select>
+
+    <insert id='XtmConfigInsert' parameterClass='XtmConfig' >
+
+    </insert>
+
+    <update id='XtmConfigUpdate' parameterClass='XtmConfig'>
+      update sys11 set
+      sys2=#Config1#,
+      sys3=#Config2#,
+      sys4=#Config3#,
+      sys5=#Config4#,
+      sys8=#SysUserId#,
+      sys9=getdate(),
+      sys10=#Bcsry#,
+      sys11=#Bdqx#,
+      sys12=#Bzrx#,
+      sys13=#Bfdj#,
+      sys14=#Sz100#,
+      sys15=#Tx#,
+      sys16=#Yzpa#
+    </update>
+
+    <delete id='XtmConfigDelete' parameterClass='XtmConfig'>
+
+    </delete>
+  </statements>
+</sqlMap>

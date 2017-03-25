@@ -1,0 +1,328 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>编辑费用数据</title>
+<link
+	href="${pageContext.request.contextPath}/static/css/edit.css?v=101" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+	<form:form id="entity" modelAttribute="entity"
+		action="${pageContext.request.contextPath}/yw/cbdata/cbCreateSave"
+		method="post" style="margin:15px;">
+		<form:hidden path="sysMsg" />
+		<form:hidden path="sysClose" />
+		<form:hidden path="sysRefreshParent" />
+		<div class="panCom" style="margin-top: 15px;">
+			<table width="99%">
+				<tr>
+					<td align="left" width="50%"><span class="navTitle">新增费用数据</span></td>
+					<td align="right" width="50%">
+						<a id="save" class="combut">保存</a>
+						| <a onclick="javascript:this.close() ;"	class="combut">关闭</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="panCon">
+			<table class="tableCon" cellspacing="0">
+				<tr>
+					<td style="text-align: left; border-right: none;">部门编码</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="depart" items="${departDll}" itemLabel="mc" itemValue="dm"
+							class="input" style="background-color:yellow" /></td>
+
+					<td style="text-align: left; border-right: none;">业务员</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="ywy" items="${ywyDll}" itemLabel="mc" itemValue="dm"
+							class="input" style="background-color:yellow" /></td>
+
+					<td style="text-align: left; border-right: none;">上年出险总次数</td>
+					<td style="text-align: left; border-left: none;"><form:input
+							path="cxcs" class="input" style="background-color:yellow" /></td>
+
+					<td style="text-align: left; border-right: none;">上年承保公司</td>
+					<td style="text-align: left; border-left: none;"><form:input
+							path="sncbgs" class="input" style="background-color:yellow" /></td>
+				</tr>
+
+				<tr>
+					<td style="text-align: left; border-right: none;">是否平安</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="sfpa" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+
+					<td style="text-align: left; border-right: none;">是否优质</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="sfyz" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+
+					<td style="text-align: left; border-right: none;">出险2次，是否赔付100%</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="cx2c" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+
+					<td style="text-align: left; border-right: none;">是否采购办</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="sfcgb" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+				</tr>
+				<tr>
+					<td style="text-align: left; border-right: none;">报批</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="bp" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+
+					<td style="text-align: left; border-right: none;">特殊类型</td>
+					<td style="text-align: left; border-left: none;"><form:input
+							path="tslx" class="input" style="background-color:yellow" /></td>
+
+					<td style="text-align: left; border-right: none;">追加费用</td>
+					<td style="text-align: left; border-left: none;"><form:input
+							path="zjfy" class="input" style="background-color:yellow" /></td>
+
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td style="text-align: left; border-right: none;">备注</td>
+					<td style="text-align: left; border-left: none;" colspan="5">
+						<form:input path="bz" class="input" width="500px"
+							style="background-color:yellow" />
+					</td>
+				</tr>
+			</table>
+	</form:form>
+			<table class="tableCon" cellspacing="0" style="margin-top:15px;">
+				<tr>
+					<td style="text-align: left; border-right: none;">经办人</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="jbr" class="input" style="background-color:yellow" /></td>
+						
+					<td style="text-align: left; border-right: none;">归属人</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="gsr" class="input" style="background-color:yellow" /></td>
+						
+					<td style="text-align: left; border-right: none;">渠道</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="qd" class="input" style="background-color:yellow" /></td>
+						
+					<td style="text-align: left; border-right: none;">渠道码</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="qdm" class="input" style="background-color:yellow" /></td>
+				</tr>
+				
+				<tr>
+					<td style="text-align: left; border-right: none;">车辆类型</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="clxs" class="input" style="background-color:yellow" /></td>
+						
+					<td style="text-align: left; border-right: none;">被保险人</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="bbr" class="input" style="background-color:yellow" /></td>
+						
+					<td style="text-align: left; border-right: none;">单证号</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="dzh" class="input" style="background-color:yellow" /></td>
+						
+					<td style="text-align: left; border-right: none;">车牌号</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="cph" class="input" style="background-color:yellow" /></td>
+				</tr>
+				
+				<tr>
+					<td style="text-align: left; border-right: none;">单位性质</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="dwxz" class="input" style="background-color:yellow" /></td>
+						
+					<td style="text-align: left; border-right: none;">座位数</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="zwh" class="input" style="background-color:yellow" /></td>
+						
+					<td style="text-align: left; border-right: none;">吨位数</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="dws" class="input" style="background-color:yellow" /></td>
+						
+					<td style="text-align: left; border-right: none;">是否新保、过户</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="sfxb" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+				</tr>
+				
+				<tr>
+					<td style="text-align: left; border-right: none;">是否保盗抢</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="sfbbd" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+					<td style="text-align: left; border-right: none;">是否保车上人员</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="sfbcsry" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+					
+						
+					<td style="text-align: left; border-right: none;">是否保自燃</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="sfbzr" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+					
+						
+					<td style="text-align: left; border-right: none;">是否保车损</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="sfbcs" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+					
+				</tr>
+				<tr>
+					<td style="text-align: left; border-right: none;">是否保发动机险</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="sfbfdj" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+					
+						
+					<td style="text-align: left; border-right: none;">单保三者</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="dbdsz" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+					
+						
+					<td style="text-align: left; border-right: none;">单保交强</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="dbjq" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+					
+						
+					<td style="text-align: left; border-right: none;">是否录维修码</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="sflwxm" style="background-color:yellow">
+							<form:option value="否">否</form:option>
+							<form:option value="是">是</form:option>
+						</form:select></td>
+					
+				</tr>
+				
+				<tr>
+					<td style="text-align: left; border-right: none;">使用年限</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="synx" class="input"  style="background-color:yellow"/></td>
+						
+					<td style="text-align: left; border-right: none;">银行卡号</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="yhkh" class="input"  style="background-color:yellow"/></td>
+						
+					<td style="text-align: left; border-right: none;">业务来源</td>
+					<td style="text-align: left; border-left: none;"><form:select
+							path="ywly" style="background-color:yellow">
+							<form:option value="直销">直销</form:option>
+							<form:option value="电销">电销</form:option>
+						</form:select></td>
+					
+						
+					<td style="text-align: left; border-right: none;">客户群</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="khq" class="input" style="background-color:yellow"/></td>
+				</tr>
+				
+				<tr>
+					<td style="text-align: left; border-right: none;">签单日期</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="qdrq" class="input" readonly="true"/></td>
+						
+					<td style="text-align: left; border-right: none;">起保日期</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="qbrq" class="input" readonly="true"/></td>
+						
+					<td style="text-align: left; border-right: none;">终保日期</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="zbrq" class="input" readonly="true"/></td>
+					<td style="text-align: left; border-right: none;"></td>
+					<td style="text-align: left; border-left: none;">
+						</td>	
+					
+				</tr>
+				
+				<tr>
+					<td style="text-align: left; border-right: none;">商业保费</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="sybf" class="input" style="background-color:yellow"/></td>
+						
+					<td style="text-align: left; border-right: none;">交强保费</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="jqbf" class="input" style="background-color:yellow"/></td>
+						
+					<td style="text-align: left; border-right: none;">车船税</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="cqs" class="input" style="background-color:yellow"/></td>
+						
+					<td style="text-align: left; border-right: none;">总保费/变动保费</td>
+					<td style="text-align: left; border-left: none;">
+						<form:input path="zbf" class="input" style="background-color:yellow"/></td>
+				</tr>
+				
+				<tr>
+					<td style="text-align: left; border-right: none;">条款</td>
+					<td style="text-align: left; border-left: none;" colspan="5">
+						<form:input path="tk" class="input" style="background-color:yellow" width="500px"/></td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+<script
+	src="${pageContext.request.contextPath}/static/js/jquery.js?v=100"
+	type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/static/js/edit.js?v=100"
+	type="text/javascript"></script>
+<script language="javascript">
+	$(document).ready(function() {
+		$("#save").click(function() {
+			$("#entity").submit();
+		});
+		if ($("#sysMsg").val() != "") {
+			alert($("#sysMsg").val());
+			$("#sysMsg").val("");
+		}
+		;
+		if ($("#sysRefreshParent").val() == "y") {
+			parent.refesh();
+			$("#sysRefreshParent").val();
+		};
+		if ($("#sysClose").val() == "y") {
+			parent.$.colorbox.close();
+		}
+		;
+	});
+</script>
+</html>

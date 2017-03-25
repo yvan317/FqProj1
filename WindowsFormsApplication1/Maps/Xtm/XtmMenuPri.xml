@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="XtmMenuPri"   type="HuiYuIfo.PiccFQP1.Entity.Xtm.XtmMenuPri, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='XtmMenuPriResult' class='XtmMenuPri'>
+      <result property="Did" column="uhf1" />
+      <result property="UserId" column="uhf2" />
+      <result property="MenuId" column="uhf3" />
+      <result property="MenuCode" column="uhf4" />
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <select id='XtmMenuPriPage' parameterClass='XtmMenuPri' resultMap='XtmMenuPriResult'>
+      select
+      uhf1,
+      uhf2,
+      uhf3,
+      uhf4
+
+      from
+      (
+      select
+      row_number() over (order by uhf2 )as rownum,
+      uhf1,
+      uhf2,
+      uhf3,
+      uhf4
+
+      from	uhf09 a
+      <dynamic prepend="WHERE">
+        <isNotEqual prepend="and" property="UserId" compareValue="0">
+          uhf2=#UserId#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="MenuId" compareValue="0">
+          uhf3=#MenuId#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="MenuCode">
+          uhf4=#MenuCode#
+        </isNotEmpty>
+
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='XtmMenuPriList' parameterClass='XtmMenuPri' resultMap='XtmMenuPriResult'>
+      select
+      uhf1,
+      uhf2,
+      uhf3,
+      uhf4
+
+      from	uhf09 a
+      <dynamic prepend="WHERE">
+        <isNotEqual prepend="and" property="UserId" compareValue="0">
+          uhf2=#UserId#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="MenuId" compareValue="0">
+          uhf3=#MenuId#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="MenuCode">
+          uhf4=#MenuCode#
+        </isNotEmpty>
+
+      </dynamic>
+      order by uhf2
+    </select>
+
+    <select id='XtmMenuPriCount' parameterClass='XtmMenuPri' resultType='int'>
+      select
+      count(*)
+      from	uhf09 a
+      <dynamic prepend="WHERE">
+        <isNotEqual prepend="and" property="UserId" compareValue="0">
+          uhf2=#UserId#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="MenuId" compareValue="0">
+          uhf3=#MenuId#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="MenuCode">
+          uhf4=#MenuCode#
+        </isNotEmpty>
+
+      </dynamic>
+    </select>
+
+    <select id='XtmMenuPriSelect' parameterClass='XtmMenuPri' resultMap='XtmMenuPriResult'>
+      select
+      uhf1,
+      uhf2,
+      uhf3,
+      uhf4
+
+      from	uhf09 a
+      where uhf1=#Did#
+    </select>
+
+    <insert id='XtmMenuPriInsert' parameterClass='XtmMenuPri'>
+      insert into uhf09
+      (
+      uhf2,
+      uhf3,
+      uhf4
+
+
+      )
+      values
+      (
+      #UserId#,
+      #MenuId#,
+      #MenuCode#
+
+
+      )
+      <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as uhf1</selectKey>
+    </insert>
+
+    <update id='XtmMenuPriUpdate' parameterClass='XtmMenuPri'>
+      update uhf09 set
+      uhf2=#UserId#,
+      uhf3=#MenuId#,
+      uhf4=#MenuCode#
+
+
+      where
+      uhf1=#Did#
+    </update>
+
+    <delete id='XtmMenuPriDelete' parameterClass='XtmMenuPri'>
+      delete from uhf09
+      where
+      uhf2=#UserId#
+    </delete>
+  </statements>
+</sqlMap>

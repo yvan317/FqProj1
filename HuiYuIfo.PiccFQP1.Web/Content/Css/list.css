@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+a:link {  text-decoration:none; color:Black;} 
+a:hover { text-decoration: none; color:Black; cursor:pointer;} 
+a:active { text-decoration: none; color:Black;} 
+a:visited {text-decoration: none; color:Black;} 
+
+html,body{font-size:13px;font-family:"Microsoft Yahei", Tahoma, "SimSun" ;padding:0px;margin:0px;}
+img{border:none;vertical-align:middle}
+.input{border:1px solid gray;line-height:18px;height:20px;padding-left:3px;width:150px;}
+.date{border:1px solid gray;line-height:18px;height:20px;padding-left:3px;width:90px;}
+.combut{padding-left:8px;padding-right:8px;}
+.but {border: #7b9ebd 1px solid; padding:3px 8px 3px 8px;}
+.linkbut{border:none;padding:3px;}
+.udfNav{width:99%;text-align:right;}
+.navLink{font-size:13px;}
+
+.navTitle{font-size:14px;font-weight:bold;}
+.panCom{width:99%;background-color:#E6ECFA;border:1px solid black;text-align:right;padding:0px;margin:0px;}
+.panCom a:link{text-decoration:none;}
+.panCom a:visited{text-decoration:none;}
+.panCom a:active{text-decoration:none;}
+.panCom a:hover{text-decoration:none;cursor:pointer;} 
+
+.tableQry{width:99%;border:1px solid black;background-color:#E6ECFA;margin:10px 0px 10px 0px;}
+.tableQry tr{vertical-align:middle;border:1px solid gray;}
+.tableQry th{background-color:#388E8E;text-align:center;color:White;line-height:20px;height:20px;padding:2px;font-weight:bold;}
+.tableQry td{padding:1px;}
+
+.list{width:99%;margin:10px 0px 10px 0px;border-collapse: collapse}
+.list tr{vertical-align:middle;text-align:center;border:1px solid black;margin:0px;}
+.list th{background-color:#388E8E;color:White;border:1px solid white;line-height:20px;height:20px;padding:2px;font-weight:bold;margin:0px;}
+.list td{padding:2px;border:1px solid black;margin:0px;}
+.list tr.alt td{background:#E6ECFA;}
+.list tr.click td{background-color:#3875D7;color:White;margin:0px;}

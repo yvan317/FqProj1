@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="DdlEntity"   type="HuiYuIfo.Framework.Entity.DdlEntity,HuiYuIfo.Framework.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='DdlEntityResult' class='DdlEntity'>
+      <result property="Dm" column="Dm" />
+      <result property="Mc" column="Mc" />
+    </resultMap>
+  </resultMaps>
+  <statements>
+    
+  <select id='ddlDepart' resultMap='DdlEntityResult'>
+    select '0' as Dm,
+    '--请选择--' as Mc
+    union all
+    select
+    convert(varchar,pra1) as Dm,
+    replicate('--',pra5-1)+pra3  as Mc
+    from pra34
+  </select>
+    <select id='ddlYwy' resultMap='DdlEntityResult'>
+      select '0' as Dm,
+      '--请选择--' as Mc
+      union all
+      select
+      convert(varchar,ndd1) as Dm,
+      ndd3  as Mc
+      from ndd29
+      where ndd6='ywy' and ndd7=#depart#
+    </select>
+
+    <select id='ddlCbDepart' resultMap='DdlEntityResult'>
+      select '' as Dm,
+      '--请选择--' as Mc
+      union all
+      select
+      pra2 as Dm,
+      replicate('--',pra5-1)+pra3  as Mc
+      from pra34
+    </select>
+    <select id='ddlCbYwy' resultMap='DdlEntityResult'>
+      select '' as Dm,
+      '--请选择--' as Mc
+      union all
+      select
+      ndd2 as Dm,
+      ndd3  as Mc
+      from ndd29
+      where ndd6='ywy' and ndd7=#depart#
+    </select>
+
+
+    <select id='ddlCbDepartByPri' resultMap='DdlEntityResult'>
+      select '' as Dm,
+      '--请选择--' as Mc
+      union all
+      select
+      pra2 as Dm,
+      replicate('--',pra5-1)+pra3  as Mc
+      from pra34
+      where pra1 in(select upr4 from upr28 where upr3='depart' and upr2=#userId#)
+    </select>
+  </statements>
+  
+</sqlMap>

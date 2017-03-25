@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AjaxPage.aspx.cs" Inherits="HuiYuIfo.PiccFQP1.Web.Index.AjaxPage" %>

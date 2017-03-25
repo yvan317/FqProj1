@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="YwTxjs"   type="HuiYuIfo.PiccFQP1.Entity.yw.YwTxjs, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='YwTxjsResult' class='YwTxjs'>
+      <result property="Did" column="txk1" />
+      <result property="Txm" column="txk2" />
+      <result property="Xs" column="txk3" />
+      <result property="CreateId" column="txk4" />
+      <result property="CreateDate" column="txk5" />
+      <result property="ModifyId" column="txk6" />
+      <result property="ModifyDate" column="txk7" />
+    </resultMap>
+  </resultMaps>
+
+  <statements>
+    <select id='YwTxjsPage' parameterClass='YwTxjs' resultMap='YwTxjsResult'>
+      select
+      txk1,
+      txk2,
+      txk3,
+      txk4,
+      txk5,
+      txk6,
+      txk7
+
+      from
+      (
+      select
+      row_number() over (order by txk1,txk2 )as rownum,
+      txk1,
+      txk2,
+      txk3,
+      txk4,
+      txk5,
+      txk6,
+      txk7
+
+      from	txk29 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Txm">
+          txk2=#Txm#
+        </isNotEmpty>
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='YwTxjsList' parameterClass='YwTxjs' resultMap='YwTxjsResult'>
+      select
+      txk1,
+      txk2,
+      txk3,
+      txk4,
+      txk5,
+      txk6,
+      txk7
+
+      from	txk29 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Txm">
+          txk2=#Txm#
+        </isNotEmpty>
+      </dynamic>
+      order by txk1,txk2
+    </select>
+
+    <select id='YwTxjsCount' parameterClass='YwTxjs' resultType='int'>
+      select
+      count(*)
+      from	txk29 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Txm">
+          txk2=#Txm#
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id='YwTxjsSelect' parameterClass='YwTxjs' resultMap='YwTxjsResult'>
+      select
+      txk1,
+      txk2,
+      txk3,
+      txk4,
+      txk5,
+      txk6,
+      txk7
+      from	txk29 a
+      where txk1=#Did#
+    </select>
+
+    <insert id='YwTxjsInsert' parameterClass='YwTxjs' >
+      insert into txk29
+      (
+      txk2,
+      txk3,
+      txk4,
+      txk5
+      )
+      values
+      (
+      #Txm#,
+      #Xs#,
+      #SysUserId#,
+      getdate()
+      )
+      <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as txk1</selectKey>
+    </insert>
+
+    <update id='YwTxjsUpdate' parameterClass='YwTxjs'>
+      update txk29 set
+      txk2=#Txm#,
+      txk3=#Xs#,
+      txk6=#SysUserId#,
+      txk7=getdate()
+      where
+      txk1=#Did#
+    </update>
+
+    <delete id='YwTxjsDelete' parameterClass='YwTxjs'>
+      delete from txk29
+      where
+      txk1=#Did#
+    </delete>
+
+  </statements>
+</sqlMap>

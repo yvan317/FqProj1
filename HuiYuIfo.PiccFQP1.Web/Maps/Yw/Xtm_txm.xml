@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="Yw_txm"   type="HuiYuIfo.PiccFQP1.Entity.Yw.Yw_txm, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='Yw_txmResult' class='Yw_txm'>
+      <result property="Did" column="Did" />
+      <result property="Txm" column="Txm" />
+      <result property="Xlc" column="Xlc" />
+      <result property="Zy" column="Zy" />
+      <result property="Js" column="Js" />
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <select id='Yw_txmPage' parameterClass='Yw_txm' resultMap='Yw_txmResult'>
+      select
+      Did,
+      Txm,
+      Xlc,
+      Zy,
+      Js
+
+      from
+      (
+      select
+      row_number() over (order by cyh1 )as rownum,
+      Did,
+      Txm,
+      Xlc,
+      Zy,
+      Js
+
+      from	Yw_txm a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Txm">
+          Txm=#Txm#
+        </isNotEmpty>
+       
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='Yw_txmList' parameterClass='Yw_txm' resultMap='Yw_txmResult'>
+      select
+      Did,
+      Txm,
+      Xlc,
+      Zy,
+      Js
+      from	Yw_txm a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Txm">
+          Txm=#Txm#
+        </isNotEmpty>
+      </dynamic>
+      order by cyh1
+    </select>
+
+    <select id='Yw_txmCount' parameterClass='Yw_txm' resultType='int'>
+      select
+      count(*)
+      from	Yw_txm a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Txm">
+          Txm=#Txm#
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id='YwCyhSelect' parameterClass='YwCyh' resultMap='YwCyhResult'>
+      select
+      Did,
+      Txm,
+      Xlc,
+      Zy,
+      Js
+
+      from	Yw_txm a
+      where cyh1=#Did#
+    </select>
+
+    <insert id='Yw_txmInsert' parameterClass='YwCyh'>
+      insert into Yw_txm
+      (
+      Did,
+      Txm,
+      Xlc,
+      Zy,
+      Js
+      )
+      values
+      (
+      #Did#,
+      #Txm#,
+      #Xlc#,
+      #Zy#,
+      #Js#
+      )
+      <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as cyh1</selectKey>
+    </insert>
+
+    <update id='Yw_txmUpdate' parameterClass='Yw_txm'>
+      update Yw_txm set
+      Xlc=#Xlc#,
+      Zy=#Zy#,
+      Js=#Js#
+      where
+      Did=#Did#
+    </update>
+
+    <delete id='Yw_txmDelete' parameterClass='Yw_txm'>
+      delete from Yw_txm
+      where
+      Did=#Did#
+    </delete>
+  </statements>
+</sqlMap>

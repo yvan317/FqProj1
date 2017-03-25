@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{17C318DA-86C6-48B5-8667-31E1FD9786AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HuiYuIfo.PiccFQP1.Controller</RootNamespace>
+    <AssemblyName>HuiYuIfo.PiccFQP1.Controller</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xtm\XtmConfigController.cs" />
+    <Compile Include="Xtm\XtmDepartController.cs" />
+    <Compile Include="Xtm\XtmUserController.cs" />
+    <Compile Include="Yw\YwAnlayController.cs" />
+    <Compile Include="Yw\YwCbDataController.cs" />
+    <Compile Include="Yw\YwCwDataController.cs" />
+    <Compile Include="Yw\YwCyhController.cs" />
+    <Compile Include="Yw\YwDataController.cs" />
+    <Compile Include="Yw\YwQueryDataController.cs" />
+    <Compile Include="Yw\YwSpecController.cs" />
+    <Compile Include="Yw\YwTxjsController.cs" />
+    <Compile Include="Yw\YwYwyDataController.cs" />
+    <Compile Include="Yw\Yw_txmController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Controller\HuiYuIfo.Framework.Controller.csproj">
+      <Project>{DE3BBFC2-791E-4736-AC9F-D8FC980BBFD0}</Project>
+      <Name>HuiYuIfo.Framework.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Core\HuiYuIfo.Framework.Core.csproj">
+      <Project>{362DE99E-57E2-4CBC-8A9A-36E666879A4F}</Project>
+      <Name>HuiYuIfo.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Dao\HuiYuIfo.Framework.Dao.csproj">
+      <Project>{689977C2-D25F-4C3F-BC7D-82A2014B4A91}</Project>
+      <Name>HuiYuIfo.Framework.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Entity\HuiYuIfo.Framework.Entity.csproj">
+      <Project>{424FC25B-1800-4833-A638-0DAC3AD81E1F}</Project>
+      <Name>HuiYuIfo.Framework.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Library\HuiYuIfo.Framework.Library.csproj">
+      <Project>{F7E3AD9A-40B8-462D-B805-D25412BD258A}</Project>
+      <Name>HuiYuIfo.Framework.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Task\HuiYuIfo.Framework.Task.csproj">
+      <Project>{3677E04D-83E7-4144-B1CE-A96CDB1CC365}</Project>
+      <Name>HuiYuIfo.Framework.Task</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HuiYuIfo.PiccFQP1.Entity\HuiYuIfo.PiccFQP1.Entity.csproj">
+      <Project>{71BCF619-B5F9-49D2-9805-4162DB56ACBD}</Project>
+      <Name>HuiYuIfo.PiccFQP1.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HuiYuIfo.PiccFQP1.Service\HuiYuIfo.PiccFQP1.Service.csproj">
+      <Project>{F041272B-3710-4BC7-AA4A-745C475AC145}</Project>
+      <Name>HuiYuIfo.PiccFQP1.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

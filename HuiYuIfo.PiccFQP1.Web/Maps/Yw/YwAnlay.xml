@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="YwAnlay"   type="HuiYuIfo.PiccFQP1.Entity.Yw.YwAnlay, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='YwAnlayResult' class='YwAnlay'>
+      <result property="Did" column="aly1" />
+      <result property="Year" column="aly2" />
+      <result property="Month" column="aly3" />
+      <result property="YwyId" column="aly4" />
+      <result property="YwyCode" column="aly5" />
+      <result property="YwyName" column="aly6" />
+      <result property="Syjy" column="aly7" />
+      <result property="Cxzdxje" column="aly8" />
+      <result property="Cxfdjx" column="aly9" />
+      <result property="Sryfgz" column="aly10" />
+      <result property="Srhj" column="aly11" />
+      <result property="Sxf" column="aly12" />
+      <result property="Fybx" column="aly13" />
+      <result property="Zcyfgz" column="aly14" />
+      <result property="Xcp" column="aly15" />
+      <result property="Zchj" column="aly16" />
+      <result property="Byjy" column="aly17" />
+      <result property="CreateId" column="aly18" />
+      <result property="CreateDate" column="aly19" />
+      <result property="ModifyId" column="aly20" />
+      <result property="ModifyDate" column="aly21" />
+      <result property="Bz" column="aly22" />
+      <result property="Depart" column="aly23" />
+    </resultMap>
+  </resultMaps>
+
+  <statements>
+    <select id='YwAnlayPage' parameterClass='YwAnlay' resultMap='YwAnlayResult'>
+      select
+      aly1,
+      aly2,
+      aly3,
+      aly4,
+      aly5,
+      aly6,
+      aly7,
+      aly8,
+      aly9,
+      aly10,
+      aly11,
+      aly12,
+      aly13,
+      aly14,
+      aly15,
+      aly16,
+      aly17,
+      aly18,
+      aly19,
+      aly20,
+      aly21,
+      aly22,
+      aly23
+
+      from
+      (
+      select
+      row_number() over (order by aly1 )as rownum,
+      aly1,
+      aly2,
+      aly3,
+      aly4,
+      aly5,
+      aly6,
+      aly7,
+      aly8,
+      aly9,
+      aly10,
+      aly11,
+      aly12,
+      aly13,
+      aly14,
+      aly15,
+      aly16,
+      aly17,
+      aly18,
+      aly19,
+      aly20,
+      aly21,
+      aly22,
+      aly23
+
+      from	aly33 a
+      <dynamic prepend="WHERE">
+        <isNotEqual prepend="and" property="Year" compareValue="0">
+          aly2=#Year#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Month" compareValue="0">
+          aly3=#Month#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="YwyId" compareValue="0">
+          aly4=#YwyId#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="YwyCode">
+          aly5=#YwyCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="YwyName">
+          aly6=#YwyName#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Syjy" compareValue="0">
+          aly7=#Syjy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cxzdxje" compareValue="0">
+          aly8=#Cxzdxje#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cxfdjx" compareValue="0">
+          aly9=#Cxfdjx#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sryfgz" compareValue="0">
+          aly10=#Sryfgz#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Srhj" compareValue="0">
+          aly11=#Srhj#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sxf" compareValue="0">
+          aly12=#Sxf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Fybx" compareValue="0">
+          aly13=#Fybx#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zcyfgz" compareValue="0">
+          aly14=#Zcyfgz#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Xcp" compareValue="0">
+          aly15=#Xcp#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zchj" compareValue="0">
+          aly16=#Zchj#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Byjy" compareValue="0">
+          aly17=#Byjy#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Bz">
+          aly22=#Bz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Depart">
+          aly23=#Depart#
+        </isNotEmpty>
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='YwAnlayList' parameterClass='YwAnlay' resultMap='YwAnlayResult'>
+      select
+      aly1,
+      aly2,
+      aly3,
+      aly4,
+      aly5,
+      aly6,
+      aly7,
+      aly8,
+      aly9,
+      aly10,
+      aly11,
+      aly12,
+      aly13,
+      aly14,
+      aly15,
+      aly16,
+      aly17,
+      aly18,
+      aly19,
+      aly20,
+      aly21,
+      aly22,
+      aly23
+
+      from	aly33 a
+      <dynamic prepend="WHERE">
+        <isNotEqual prepend="and" property="Year" compareValue="0">
+          aly2=#Year#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Month" compareValue="0">
+          aly3=#Month#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="YwyId" compareValue="0">
+          aly4=#YwyId#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="YwyCode">
+          aly5=#YwyCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="YwyName">
+          aly6=#YwyName#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Syjy" compareValue="0">
+          aly7=#Syjy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cxzdxje" compareValue="0">
+          aly8=#Cxzdxje#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cxfdjx" compareValue="0">
+          aly9=#Cxfdjx#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sryfgz" compareValue="0">
+          aly10=#Sryfgz#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Srhj" compareValue="0">
+          aly11=#Srhj#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sxf" compareValue="0">
+          aly12=#Sxf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Fybx" compareValue="0">
+          aly13=#Fybx#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zcyfgz" compareValue="0">
+          aly14=#Zcyfgz#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Xcp" compareValue="0">
+          aly15=#Xcp#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zchj" compareValue="0">
+          aly16=#Zchj#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Byjy" compareValue="0">
+          aly17=#Byjy#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Bz">
+          aly22=#Bz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Depart">
+          aly23=#Depart#
+        </isNotEmpty>
+      </dynamic>
+      order by aly1
+    </select>
+
+    <select id='YwAnlayCount' parameterClass='YwAnlay' resultType='int'>
+      select
+      count(*)
+      from	aly33 a
+      <dynamic prepend="WHERE">
+        <isNotEqual prepend="and" property="Year" compareValue="0">
+          aly2=#Year#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Month" compareValue="0">
+          aly3=#Month#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="YwyId" compareValue="0">
+          aly4=#YwyId#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="YwyCode">
+          aly5=#YwyCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="YwyName">
+          aly6=#YwyName#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Syjy" compareValue="0">
+          aly7=#Syjy#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cxzdxje" compareValue="0">
+          aly8=#Cxzdxje#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Cxfdjx" compareValue="0">
+          aly9=#Cxfdjx#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sryfgz" compareValue="0">
+          aly10=#Sryfgz#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Srhj" compareValue="0">
+          aly11=#Srhj#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Sxf" compareValue="0">
+          aly12=#Sxf#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Fybx" compareValue="0">
+          aly13=#Fybx#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zcyfgz" compareValue="0">
+          aly14=#Zcyfgz#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Xcp" compareValue="0">
+          aly15=#Xcp#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Zchj" compareValue="0">
+          aly16=#Zchj#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="Byjy" compareValue="0">
+          aly17=#Byjy#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Bz">
+          aly22=#Bz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Depart">
+          aly23=#Depart#
+        </isNotEmpty>
+      </dynamic>
+    </select>
+
+    <select id='YwAnlaySelect' parameterClass='YwAnlay' resultMap='YwAnlayResult'>
+      select
+      aly1,
+      aly2,
+      aly3,
+      aly4,
+      aly5,
+      aly6,
+      aly7,
+      aly8,
+      aly9,
+      aly10,
+      aly11,
+      aly12,
+      aly13,
+      aly14,
+      aly15,
+      aly16,
+      aly17,
+      aly18,
+      aly19,
+      aly20,
+      aly21,
+      aly22,
+      aly23
+      from	aly33 a
+      where aly1=#Did#
+    </select>
+
+    <insert id='YwAnlayInsert' parameterClass='YwAnlay' >
+      insert into aly33
+      (
+      aly2,
+      aly3,
+      aly4,
+      aly5,
+      aly6,
+      aly7,
+      aly8,
+      aly18,
+      aly19,
+      aly22,
+      aly23
+      )
+      values
+      (
+      #Year#,
+      #Month#,
+      #YwyId#,
+      #YwyCode#,
+      #YwyName#,
+      #Syjy#,
+      #Cxzdxje#
+      #SysUserId#,
+      getdate(),
+      #Bz#,
+      #Depart#
+      )
+      <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as aly1</selectKey>
+    </insert>
+
+    <update id='YwAnlayUpdate' parameterClass='YwAnlay'>
+      update aly33 set
+      aly9=#Cxfdjx#,
+      aly10=#Sryfgz#,
+      aly11=#Srhj#,
+      aly12=#Sxf#,
+      aly13=#Fybx#,
+      aly14=#Zcyfgz#,
+      aly15=#Xcp#,
+      aly16=#Zchj#,
+      aly17=#Byjy#,
+      aly20=#SysUserId#,
+      aly21=getdate(),
+      aly22=#Bz#
+      where
+      aly1=#Did#
+    </update>
+
+    <update id='YwAnlayUpdateEndBz' parameterClass='YwAnlay'>
+      update aly33 set
+      aly22='E'
+      
+    </update>
+
+    <delete id='YwAnlayDelete' parameterClass='YwAnlay'>
+      delete from aly33
+      where
+      aly1=#Did#
+    </delete>
+    
+  </statements>
+</sqlMap>

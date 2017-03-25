@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A95FBF52-4088-470C-B0F9-FF381CCC91C6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>WindowsFormsApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Content Include="database.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="Maps\Yw\YwTxjs.xml" />
+    <Content Include="providers.config" />
+    <Content Include="SqlMap.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Controller\HuiYuIfo.Framework.Controller.csproj">
+      <Project>{DE3BBFC2-791E-4736-AC9F-D8FC980BBFD0}</Project>
+      <Name>HuiYuIfo.Framework.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Core\HuiYuIfo.Framework.Core.csproj">
+      <Project>{362DE99E-57E2-4CBC-8A9A-36E666879A4F}</Project>
+      <Name>HuiYuIfo.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Dao\HuiYuIfo.Framework.Dao.csproj">
+      <Project>{689977C2-D25F-4C3F-BC7D-82A2014B4A91}</Project>
+      <Name>HuiYuIfo.Framework.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Entity\HuiYuIfo.Framework.Entity.csproj">
+      <Project>{424FC25B-1800-4833-A638-0DAC3AD81E1F}</Project>
+      <Name>HuiYuIfo.Framework.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Library\HuiYuIfo.Framework.Library.csproj">
+      <Project>{F7E3AD9A-40B8-462D-B805-D25412BD258A}</Project>
+      <Name>HuiYuIfo.Framework.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Task\HuiYuIfo.Framework.Task.csproj">
+      <Project>{3677E04D-83E7-4144-B1CE-A96CDB1CC365}</Project>
+      <Name>HuiYuIfo.Framework.Task</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.UiProcess\HuiYuIfo.Framework.UiProcess.csproj">
+      <Project>{2970767C-ED95-45DC-87C4-A10F66D741B1}</Project>
+      <Name>HuiYuIfo.Framework.UiProcess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Web\HuiYuIfo.Framework.Web.csproj">
+      <Project>{A9C91F83-C0BD-468C-A752-E1AF770E72CC}</Project>
+      <Name>HuiYuIfo.Framework.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HuiYuIfo.PiccFQP1.Controller\HuiYuIfo.PiccFQP1.Controller.csproj">
+      <Project>{17C318DA-86C6-48B5-8667-31E1FD9786AA}</Project>
+      <Name>HuiYuIfo.PiccFQP1.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HuiYuIfo.PiccFQP1.Entity\HuiYuIfo.PiccFQP1.Entity.csproj">
+      <Project>{71BCF619-B5F9-49D2-9805-4162DB56ACBD}</Project>
+      <Name>HuiYuIfo.PiccFQP1.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HuiYuIfo.PiccFQP1.Service\HuiYuIfo.PiccFQP1.Service.csproj">
+      <Project>{F041272B-3710-4BC7-AA4A-745C475AC145}</Project>
+      <Name>HuiYuIfo.PiccFQP1.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Maps\dll.xml" />
+    <Content Include="Maps\Xtm\XtmConfig.xml" />
+    <Content Include="Maps\Xtm\XtmDepart.xml" />
+    <Content Include="Maps\Xtm\XtmMenu.xml" />
+    <Content Include="Maps\Xtm\XtmMenuPri.xml" />
+    <Content Include="Maps\Xtm\XtmUser.xml" />
+    <Content Include="Maps\Xtm\XtmUserPri.xml" />
+    <Content Include="Maps\Yw\YwAnlay.xml" />
+    <Content Include="Maps\Yw\YwAnlayTemp.xml" />
+    <Content Include="Maps\Yw\YwAttach.xml" />
+    <Content Include="Maps\Yw\YwCyh.xml" />
+    <Content Include="Maps\Yw\YwData.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Maps\Yw\YwSpec.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

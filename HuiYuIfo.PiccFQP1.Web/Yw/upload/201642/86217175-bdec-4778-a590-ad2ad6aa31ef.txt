@@ -1,0 +1,46 @@
+alter table pmm_file
+  add ta_pmm11 varchar2(40)
+
+z1101  J库数据生成出错(1)
+110ck1 J库采购单已经审核，不能取消审核
+pmc124 香港网络客户不存在
+
+
+sapmt110.4gl
+sapmt540.4gl
+apmt540.4fd
+sapmt540.global
+
+
+apmi600.4gl
+apmi600.4fd
+
+
+
+
+WHEN "confirm"
+	IF cl_chk_act_auth() AND NOT cl_null(g_rva.rva01) THEN
+		CALL CheckExistImg()
+		CALL t110_checkMXBZ () RETURNING l_res
+	IF l_res='Y' THEN 
+    
+        	CALL  t110_checkBZ()RETURNING l_res
+            	IF l_res='Y' THEN 
+			CALL checkSave ()RETURNING l_res
+			IF l_res='Y' THEN  
+				CALL beforeDealInvoiceConfirm() RETURNING l_res
+				IF l_res='Y' THEN 
+	             			
+					CALL t110_y()  				ELSE
+					CALL dealInvokeFail()
+					CALL cl_err('','z1101',1)
+				END IF 
+	             	
+			ELSE
+				CALL cl_err('','90256',1)
+                
+			END IF  
+            	
+		END IF 
+ 	END IF  
+	END IF

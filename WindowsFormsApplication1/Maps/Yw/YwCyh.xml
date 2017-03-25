@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="YwCyh"   type="HuiYuIfo.PiccFQP1.Entity.Yw.YwCyh, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='YwCyhResult' class='YwCyh'>
+      <result property="Did" column="cyh1" />
+      <result property="Qd" column="cyh2" />
+      <result property="Xz" column="cyh3" />
+      <result property="Dbdsz" column="cyh4" />
+      <result property="Dbjq" column="cyh5" />
+      <result property="Cllx" column="cyh6" />
+      <result property="Ywly" column="cyh7" />
+      <result property="Zhcxcs" column="cyh8" />
+      <result property="Synx" column="cyh9" />
+      <result property="Sfbcs" column="cyh10" />
+      <result property="Pfvsfc100" column="cyh11" />
+      <result property="Jcsxf" column="cyh12" />
+      <result property="Bcsry" column="cyh13" />
+      <result property="Bdqx" column="cyh14" />
+      <result property="Bzrx" column="cyh15" />
+      <result property="Bfdj" column="cyh16" />
+      <result property="Sz100" column="cyh17" />
+      <result property="Qx" column="cyh18" />
+      <result property="Uzpa" column="cyh19" />
+      <result property="Xxfcyh" column="cyh20" />
+      <result property="CreateId" column="cyh21" />
+      <result property="CreateDate" column="cyh22" />
+      <result property="ModifyId" column="cyh23" />
+      <result property="ModifyDate" column="cyh24" />
+      <result property="Yzzrjs" column="cyh25"/>
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <select id='YwCyhPage' parameterClass='YwCyh' resultMap='YwCyhResult'>
+      select
+      cyh1,
+      cyh2,
+      cyh3,
+      cyh4,
+      cyh5,
+      cyh6,
+      cyh7,
+      cyh8,
+      cyh9,
+      cyh10,
+      cyh11,
+      cyh12,
+      cyh13,
+      cyh14,
+      cyh15,
+      cyh16,
+      cyh17,
+      cyh18,
+      cyh19,
+      cyh20,
+      cyh21,
+      cyh22,
+      cyh23,
+      cyh24,cyh25
+
+      from
+      (
+      select
+      row_number() over (order by cyh1 )as rownum,
+      cyh1,
+      cyh2,
+      cyh3,
+      cyh4,
+      cyh5,
+      cyh6,
+      cyh7,
+      cyh8,
+      cyh9,
+      cyh10,
+      cyh11,
+      cyh12,
+      cyh13,
+      cyh14,
+      cyh15,
+      cyh16,
+      cyh17,
+      cyh18,
+      cyh19,
+      cyh20,
+      cyh21,
+      cyh22,
+      cyh23,
+      cyh24,cyh25
+
+      from	cyh18 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Qd">
+          cyh2=#Qd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Xz">
+          cyh3=#Xz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbdsz">
+          cyh4=#Dbdsz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbjq">
+          cyh5=#Dbjq#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cllx">
+          cyh6=#Cllx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ywly">
+          cyh7=#Ywly#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Zhcxcs">
+          cyh8=#Zhcxcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Synx">
+          cyh9=#Synx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbcs">
+          cyh10=#Sfbcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Pfvsfc100">
+          cyh11=#Pfvsfc100#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Jcsxf">
+          cyh12=#Jcsxf#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bcsry">
+          cyh13=#Bcsry#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bdqx">
+          cyh14=#Bdqx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bzrx">
+          cyh15=#Bzrx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bfdj">
+          cyh16=#Bfdj#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sz100">
+          cyh17=#Sz100#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Qx">
+          cyh18=#Qx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Uzpa">
+          cyh19=#Uzpa#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Xxfcyh" compareValue="0">
+          cyh20=#Xxfcyh#
+        </isNotEqual>
+
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='YwCyhList' parameterClass='YwCyh' resultMap='YwCyhResult'>
+      select
+      cyh1,
+      cyh2,
+      cyh3,
+      cyh4,
+      cyh5,
+      cyh6,
+      cyh7,
+      cyh8,
+      cyh9,
+      cyh10,
+      cyh11,
+      cyh12,
+      cyh13,
+      cyh14,
+      cyh15,
+      cyh16,
+      cyh17,
+      cyh18,
+      cyh19,
+      cyh20,
+      cyh21,
+      cyh22,
+      cyh23,
+      cyh24,cyh25
+
+      from	cyh18 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Qd">
+          cyh2=#Qd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Xz">
+          cyh3=#Xz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbdsz">
+          cyh4=#Dbdsz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbjq">
+          cyh5=#Dbjq#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cllx">
+          cyh6=#Cllx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ywly">
+          cyh7=#Ywly#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Zhcxcs">
+          cyh8=#Zhcxcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Synx">
+          cyh9=#Synx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbcs">
+          cyh10=#Sfbcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Pfvsfc100">
+          cyh11=#Pfvsfc100#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Jcsxf">
+          cyh12=#Jcsxf#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bcsry">
+          cyh13=#Bcsry#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bdqx">
+          cyh14=#Bdqx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bzrx">
+          cyh15=#Bzrx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bfdj">
+          cyh16=#Bfdj#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sz100">
+          cyh17=#Sz100#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Qx">
+          cyh18=#Qx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Uzpa">
+          cyh19=#Uzpa#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Xxfcyh" compareValue="0">
+          cyh20=#Xxfcyh#
+        </isNotEqual>
+
+      </dynamic>
+      order by cyh1
+    </select>
+
+    <select id='YwCyhCount' parameterClass='YwCyh' resultType='int'>
+      select
+      count(*)
+      from	cyh18 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="Qd">
+          cyh2=#Qd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Xz">
+          cyh3=#Xz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbdsz">
+          cyh4=#Dbdsz#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Dbjq">
+          cyh5=#Dbjq#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Cllx">
+          cyh6=#Cllx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Ywly">
+          cyh7=#Ywly#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Zhcxcs">
+          cyh8=#Zhcxcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Synx">
+          cyh9=#Synx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sfbcs">
+          cyh10=#Sfbcs#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Pfvsfc100">
+          cyh11=#Pfvsfc100#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Jcsxf">
+          cyh12=#Jcsxf#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bcsry">
+          cyh13=#Bcsry#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bdqx">
+          cyh14=#Bdqx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bzrx">
+          cyh15=#Bzrx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Bfdj">
+          cyh16=#Bfdj#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sz100">
+          cyh17=#Sz100#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Qx">
+          cyh18=#Qx#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Uzpa">
+          cyh19=#Uzpa#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="Xxfcyh" compareValue="0">
+          cyh20=#Xxfcyh#
+        </isNotEqual>
+
+      </dynamic>
+    </select>
+
+    <select id='YwCyhSelect' parameterClass='YwCyh' resultMap='YwCyhResult'>
+      select
+      cyh1,
+      cyh2,
+      cyh3,
+      cyh4,
+      cyh5,
+      cyh6,
+      cyh7,
+      cyh8,
+      cyh9,
+      cyh10,
+      cyh11,
+      cyh12,
+      cyh13,
+      cyh14,
+      cyh15,
+      cyh16,
+      cyh17,
+      cyh18,
+      cyh19,
+      cyh20,
+      cyh21,
+      cyh22,
+      cyh23,
+      cyh24,cyh25
+
+      from	cyh18 a
+      where cyh1=#Did#
+    </select>
+
+    <insert id='YwCyhInsert' parameterClass='YwCyh'>
+      insert into cyh18
+      (
+      cyh2,
+      cyh3,
+      cyh4,
+      cyh5,
+      cyh6,
+      cyh7,
+      cyh8,
+      cyh9,
+      cyh10,
+      cyh11,
+      cyh12,
+      cyh13,
+      cyh14,
+      cyh15,
+      cyh16,
+      cyh17,
+      cyh18,
+      cyh19,
+      cyh20,
+      cyh25,
+      cyh21,
+      cyh22
+      )
+      values
+      (
+      #Qd#,
+      #Xz#,
+      #Dbdsz#,
+      #Dbjq#,
+      #Cllx#,
+      #Ywly#,
+      #Zhcxcs#,
+      #Synx#,
+      #Sfbcs#,
+      #Pfvsfc100#,
+      #Jcsxf#,
+      #Bcsry#,
+      #Bdqx#,
+      #Bzrx#,
+      #Bfdj#,
+      #Sz100#,
+      #Qx#,
+      #Uzpa#,
+      #Xxfcyh#,
+      #Yzzrjs#,
+      #SysUserId#,
+      getdate()
+      )
+      <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as cyh1</selectKey>
+    </insert>
+
+    <update id='YwCyhUpdate' parameterClass='YwCyh'>
+      update cyh18 set
+      cyh2=#Qd#,
+      cyh3=#Xz#,
+      cyh4=#Dbdsz#,
+      cyh5=#Dbjq#,
+      cyh6=#Cllx#,
+      cyh7=#Ywly#,
+      cyh8=#Zhcxcs#,
+      cyh9=#Synx#,
+      cyh10=#Sfbcs#,
+      cyh11=#Pfvsfc100#,
+      cyh12=#Jcsxf#,
+      cyh13=#Bcsry#,
+      cyh14=#Bdqx#,
+      cyh15=#Bzrx#,
+      cyh16=#Bfdj#,
+      cyh17=#Sz100#,
+      cyh18=#Qx#,
+      cyh19=#Uzpa#,
+      cyh20=#Xxfcyh#,
+      cyh25=#Yzzrjs#,
+      cyh23=#SysUserId#,
+      cyh24=getdate()
+      where
+      cyh1=#Did#
+    </update>
+
+    <delete id='YwCyhDelete' parameterClass='YwCyh'>
+      delete from cyh18
+      where
+      cyh1=#Did#
+    </delete>
+  </statements>
+</sqlMap>

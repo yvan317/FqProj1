@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="XtmUser"   type="HuiYuIfo.PiccFQP1.Entity.Xtm.XtmUser, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='XtmUserResult' class='XtmUser'>
+      <result property="Did" column="ndd1" />
+      <result property="UserCode" column="ndd2" />
+      <result property="UserName" column="ndd3" />
+      <result property="UserPwd" column="ndd4" />
+      <result property="Status" column="ndd5" />
+      <result property="UserType" column="ndd6" />
+      <result property="DepartId" column="ndd7" />
+      <result property="CreateId" column="ndd8" />
+      <result property="CreateDate" column="ndd9" />
+      <result property="ModifyId" column="ndd10" />
+      <result property="ModifyDate" column="ndd11" />
+
+      <result property="DepartName" column="DepartName" />
+      <result property="DepartCode" column="DepartCode" />
+      
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <select id='XtmUserPage' parameterClass='XtmUser' resultMap='XtmUserResult'>
+      select
+      ndd1,
+      ndd2,
+      ndd3,
+      ndd4,
+      ndd5,
+      ndd6,
+      ndd7,
+      ndd8,
+      ndd9,
+      ndd10,
+      ndd11,
+      DepartName,
+      DepartCode
+
+      from
+      (
+      select
+      row_number() over (order by ndd1,ndd2 )as rownum,
+      ndd1,
+      ndd2,
+      ndd3,
+      ndd4,
+      ndd5,
+      ndd6,
+      ndd7,
+      ndd8,
+      ndd9,
+      ndd10,
+      ndd11,
+      pra3 as DepartName,
+      pra2 as DepartCode
+
+      from	ndd29 a
+      left join pra34 b on(pra1=ndd7)
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="UserCode">
+          ndd2=#UserCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="UserName">
+          ndd3=#UserName#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="UserPwd">
+          ndd4=#UserPwd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Status">
+          ndd5=#Status#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="UserType">
+          ndd6=#UserType#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="DepartId" compareValue="0">
+          ndd7=#DepartId#
+        </isNotEqual>
+
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='XtmUserList' parameterClass='XtmUser' resultMap='XtmUserResult'>
+      select
+      ndd1,
+      ndd2,
+      ndd3,
+      ndd4,
+      ndd5,
+      ndd6,
+      ndd7,
+      ndd8,
+      ndd9,
+      ndd10,
+      ndd11,
+      pra3 as DepartName,
+      pra2 as DepartCode
+      from	ndd29 a
+      left join pra34 b on(pra1=ndd7)
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="UserCode">
+          ndd2=#UserCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="UserName">
+          ndd3=#UserName#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="UserPwd">
+          ndd4=#UserPwd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Status">
+          ndd5=#Status#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="UserType">
+          ndd6=#UserType#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="DepartId" compareValue="0">
+          ndd7=#DepartId#
+        </isNotEqual>
+
+      </dynamic>
+      order by ndd1,ndd2
+    </select>
+
+    <select id='XtmUserCount' parameterClass='XtmUser' resultType='int'>
+      select
+      count(*)
+      from	ndd29 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="UserCode">
+          ndd2=#UserCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="UserName">
+          ndd3=#UserName#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="UserPwd">
+          ndd4=#UserPwd#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Status">
+          ndd5=#Status#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="UserType">
+          ndd6=#UserType#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="DepartId" compareValue="0">
+          ndd7=#DepartId#
+        </isNotEqual>
+
+      </dynamic>
+    </select>
+
+    <select id='XtmUserSelect' parameterClass='XtmUser' resultMap='XtmUserResult'>
+      select
+      ndd1,
+      ndd2,
+      ndd3,
+      ndd4,
+      ndd5,
+      ndd6,
+      ndd7,
+      ndd8,
+      ndd9,
+      ndd10,
+      ndd11,
+      pra3 as DepartName,
+      pra2 as DepartCode
+      from	ndd29 a
+      left join pra34 b on(pra1=ndd7)
+      where ndd1=#Did#
+    </select>
+
+    <insert id='XtmUserInsert' parameterClass='XtmUser'>
+      insert into ndd29
+      (
+      ndd7,
+      ndd2,
+      ndd3,
+      ndd4,
+      ndd5,
+      ndd6,
+      ndd8,
+      ndd9
+      )
+      values
+      (
+      #DepartId#,
+      #UserCode#,
+      #UserName#,
+      #UserPwd#,
+      #Status#,
+      #UserType#,
+      #SysUserId#,
+      getdate()
+      )
+      <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as ndd1</selectKey>
+    </insert>
+
+    <update id='XtmUserUpdate' parameterClass='XtmUser'>
+      update ndd29 set
+      ndd3=#UserName#,
+      ndd4=#UserPwd#,
+      ndd5=#Status#,
+      ndd6=#UserType#,
+      ndd7=#DepartId#,
+      ndd10=#SysUserId#,
+      ndd11=getdate()
+      where
+      ndd1=#Did#
+    </update>
+
+    <delete id='XtmUserDelete' parameterClass='XtmUser'>
+      delete from ndd29
+      where
+      ndd1=#Did#
+    </delete>
+  </statements>
+</sqlMap>

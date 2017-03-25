@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="XtmMenu"   type="HuiYuIfo.PiccFQP1.Entity.Xtm.XtmMenu, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='XtmMenuResult' class='XtmMenu'>
+      <result property="Did" column="rkd1" />
+      <result property="MenuCode" column="rkd2" />
+      <result property="MenuName" column="rkd3" />
+      <result property="MenuConfig" column="rkd4" />
+      <result property="ParentId" column="rkd5" />
+      <result property="MenuLayer" column="rkd6" />
+      <result property="Status" column="rkd7" />
+      <result property="Sort" column="rkd8" />
+      <result property="CreateId" column="rkd9" />
+      <result property="CreateDate" column="rkd10" />
+      <result property="ModifyId" column="rkd11" />
+      <result property="ModifyDate" column="rkd12" />
+
+      <result property="Pri" column="Pri" />
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <select id='XtmMenuPage' parameterClass='XtmMenu' resultMap='XtmMenuResult'>
+      select
+      rkd1,
+      rkd2,
+      rkd3,
+      rkd4,
+      rkd5,
+      rkd6,
+      rkd7,
+      rkd8,
+      rkd9,
+      rkd10,
+      rkd11,
+      rkd12,
+
+      Pri
+
+      from
+      (
+      select
+      row_number() over (order by rkd1,rkd2 )as rownum,
+      rkd1,
+      rkd2,
+      rkd3,
+      rkd4,
+      rkd5,
+      rkd6,
+      rkd7,
+      rkd8,
+      rkd9,
+      rkd10,
+      rkd11,
+      rkd12,
+
+      case isnull(b.uhf3,'') when '' then 'n' else 'y' end as Pri
+
+      from	rkd13 a
+      left join (select uhf3 from uhf09 where uhf2=#SysUserId#) b on(a.rkd1=b.uhf3)
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="MenuCode">
+          rkd2=#MenuCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Type">
+          isnull(uhf3,'')&lt;&gt;''
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="MenuName">
+          rkd3=#MenuName#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="MenuConfig">
+          rkd4=#MenuConfig#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="ParentId" compareValue="0">
+          rkd5=#ParentId#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="MenuLayer" compareValue="0">
+          rkd6=#MenuLayer#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Status">
+          rkd7=#Status#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sort">
+          rkd8=#Sort#
+        </isNotEmpty>
+
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='XtmMenuList' parameterClass='XtmMenu' resultMap='XtmMenuResult'>
+      select
+      rkd1,
+      rkd2,
+      rkd3,
+      rkd4,
+      rkd5,
+      rkd6,
+      rkd7,
+      rkd8,
+      rkd9,
+      rkd10,
+      rkd11,
+      rkd12,
+
+      case isnull(b.uhf3,'') when '' then 'n' else 'y' end as Pri
+
+      from	rkd13 a
+      left join (select uhf3 from uhf09 where uhf2=#UserId#) b on(a.rkd1=b.uhf3)
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="MenuCode">
+          rkd2=#MenuCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Type">
+          isnull(uhf3,'')&lt;&gt;''
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="MenuName">
+          rkd3=#MenuName#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="MenuConfig">
+          rkd4=#MenuConfig#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="ParentId" compareValue="0">
+          rkd5=#ParentId#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="MenuLayer" compareValue="0">
+          rkd6=#MenuLayer#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Status">
+          rkd7=#Status#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sort">
+          rkd8=#Sort#
+        </isNotEmpty>
+
+      </dynamic>
+      order by rkd8
+    </select>
+
+    <select id='XtmMenuLoad' parameterClass='XtmMenu' resultMap='XtmMenuResult'>
+      select
+      rkd1,
+      rkd2,
+      rkd3,
+      rkd4,
+      rkd5,
+      rkd6,
+      rkd7,
+      rkd8,
+      rkd9,
+      rkd10,
+      rkd11,
+      rkd12,
+
+      case isnull(b.uhf3,'') when '' then 'n' else 'y' end as Pri
+
+      from	rkd13 a
+      left join (select uhf3 from uhf09 where uhf2=#SysUserId#) b on(a.rkd1=b.uhf3)
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="MenuCode">
+          rkd2=#MenuCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Type">
+          isnull(uhf3,'')&lt;&gt;''
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="MenuName">
+          rkd3=#MenuName#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="MenuConfig">
+          rkd4=#MenuConfig#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="ParentId" compareValue="0">
+          rkd5=#ParentId#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="MenuLayer" compareValue="0">
+          rkd6=#MenuLayer#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Status">
+          rkd7=#Status#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sort">
+          rkd8=#Sort#
+        </isNotEmpty>
+
+      </dynamic>
+      order by rkd8
+    </select>
+
+    <select id='XtmMenuCount' parameterClass='XtmMenu' resultType='int'>
+      select
+      count(*)
+      from	rkd13 a
+      left join (select uhf3 from uhf09 where uhf2=#SysUserId#) b on(a.rkd1=b.uhf3)
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="MenuCode">
+          rkd2=#MenuCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Type">
+          isnull(uhf3,'')&lt;&gt;''
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="MenuName">
+          rkd3=#MenuName#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="MenuConfig">
+          rkd4=#MenuConfig#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="ParentId" compareValue="0">
+          rkd5=#ParentId#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="MenuLayer" compareValue="0">
+          rkd6=#MenuLayer#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Status">
+          rkd7=#Status#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="Sort">
+          rkd8=#Sort#
+        </isNotEmpty>
+
+      </dynamic>
+    </select>
+
+    <select id='XtmMenuSelect' parameterClass='XtmMenu' resultMap='XtmMenuResult'>
+      select
+      rkd1,
+      rkd2,
+      rkd3,
+      rkd4,
+      rkd5,
+      rkd6,
+      rkd7,
+      rkd8,
+      rkd9,
+      rkd10,
+      rkd11,
+      rkd12,
+      'y' as Pri
+      from	rkd13 a
+      where rkd1=#Did#
+    </select>
+
+    <insert id='XtmMenuInsert' parameterClass='XtmMenu' >
+      insert into rkd13
+      (
+      rkd4,
+      rkd2,
+      rkd3,
+      rkd5,
+      rkd6,
+      rkd7,
+      rkd8,
+      rkd9,
+      rkd10
+      )
+      values
+      (
+      #MenuConfig#,
+      #MenuCode#,
+      #MenuName#,
+      #ParentId#,
+      #MenuLayer#,
+      #Status#,
+      #Sort#,
+      #SysUserId#,
+      getdate()
+      )
+      <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as rkd1</selectKey>
+    </insert>
+
+    <update id='XtmMenuUpdate' parameterClass='XtmMenu'>
+      update rkd13 set
+      rkd3=#MenuName#,
+      rkd4=#MenuConfig#,
+      rkd5=#ParentId#,
+      rkd6=#MenuLayer#,
+      rkd7=#Status#,
+      rkd8=#Sort#,
+      rkd11=#SysUserId#,
+      rkd12=getdate()
+      where
+      rkd1=#Did#
+    </update>
+
+    <delete id='XtmMenuDelete' parameterClass='XtmMenu'>
+      delete from rkd13
+      where
+      rkd1=#Did#
+    </delete>
+  </statements>
+</sqlMap>

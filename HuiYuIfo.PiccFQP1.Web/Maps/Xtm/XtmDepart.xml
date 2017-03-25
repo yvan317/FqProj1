@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="XtmDepart"   type="HuiYuIfo.PiccFQP1.Entity.Xtm.XtmDepart, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='XtmDepartResult' class='XtmDepart'>
+      <result property="Did" column="pra1" />
+      <result property="DepartCode" column="pra2" />
+      <result property="DepartName" column="pra3" />
+      <result property="ParentId" column="pra4" />
+      <result property="DepartLayer" column="pra5" />
+      <result property="Status" column="pra6" />
+      <result property="CreateId" column="pra7" />
+      <result property="CreateDate" column="pra8" />
+      <result property="ModifyId" column="pra9" />
+      <result property="ModifyDate" column="pra10" />
+      <result property="ParentName" column="ParentName"/>
+      <result property="ComplexName" column="ComplexName" />
+      <result property="Pri" column="Pri" />
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <select id='XtmDepartPage' parameterClass='XtmDepart' resultMap='XtmDepartResult'>
+      select
+      pra1,
+      pra2,
+      pra3,
+      pra4,
+      pra5,
+      pra6,
+      pra7,
+      pra8,
+      pra9,
+      pra10,
+      complexname,
+      Pri,
+      ParentName
+
+      from
+      (
+      select
+      row_number() over (order by a.pra1,a.pra2 )as rownum,
+      a.pra1,
+      a.pra2,
+      a.pra3,
+      a.pra4,
+      a.pra5,
+      a.pra6,
+      a.pra7,
+      a.pra8,
+      a.pra9,
+      a.pra10,
+      replicate('----',a.pra5)+a.pra3 as ComplexName,
+      case isnull(b.upr4,'') when '' then 'n' else 'y' end as Pri,
+      c.pra3 as ParentName
+      from pra34 a
+      left join (select upr4 from upr28 where upr3='depart' and upr2=#SysUserId#) b on(b.upr4=a.pra1)
+      left join pra34 c on(c.pra1=a.pra4)
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="DepartCode">
+          a.pra2=#DepartCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="DepartName">
+          a.pra3=#DepartName#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="ParentId" compareValue="0">
+          a.pra4=#ParentId#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="DepartLayer" compareValue="0">
+          a.pra5=#DepartLayer#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Status">
+          a.pra6=#Status#
+        </isNotEmpty>
+
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='XtmDepartList' parameterClass='XtmDepart' resultMap='XtmDepartResult'>
+      select
+      pra1,
+      pra2,
+      pra3,
+      pra4,
+      pra5,
+      pra6,
+      pra7,
+      pra8,
+      pra9,
+      pra10,
+      replicate('----',a.pra5)+a.pra3 as ComplexName,
+      case isnull(b.upr4,'') when '' then 'n' else 'y' end as Pri,
+      '' as ParentName
+      from pra34 a
+      left join (select upr4 from upr28 where upr3='depart' and upr2=#SysUserId#) b on(b.upr4=a.pra1)
+
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="DepartCode">
+          a.pra2=#DepartCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="DepartName">
+          a.pra3=#DepartName#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="ParentId" compareValue="0">
+          a.pra4=#ParentId#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="DepartLayer" compareValue="0">
+          a.pra5=#DepartLayer#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Status">
+          a.pra6=#Status#
+        </isNotEmpty>
+
+      </dynamic>
+      order by a.pra1,a.pra2
+    </select>
+    <select id='XtmDepartLoad' parameterClass='XtmDepart' resultMap='XtmDepartResult'>
+      select
+      pra1,
+      pra2,
+      pra3,
+      pra4,
+      pra5,
+      pra6,
+      pra7,
+      pra8,
+      pra9,
+      pra10,
+      replicate('----',a.pra5)+a.pra3 as ComplexName,
+      case isnull(b.upr4,'') when '' then 'n' else 'y' end as Pri,
+      '' as ParentName
+      from pra34 a
+      left join (select upr4 from upr28 where upr3='depart' and upr2=#UserId#) b on(b.upr4=a.pra1)
+      order by pra7
+    </select>
+    <select id='XtmDepartCount' parameterClass='XtmDepart' resultType='int'>
+      select
+      count(*)
+      from	pra34 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="DepartCode">
+          a.pra2=#DepartCode#
+        </isNotEmpty>
+        <isNotEmpty prepend="and" property="DepartName">
+          a.pra3=#DepartName#
+        </isNotEmpty>
+        <isNotEqual prepend="and" property="ParentId" compareValue="0">
+          a.pra4=#ParentId#
+        </isNotEqual>
+        <isNotEqual prepend="and" property="DepartLayer" compareValue="0">
+          a.pra5=#DepartLayer#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="Status">
+          a.pra6=#Status#
+        </isNotEmpty>
+
+      </dynamic>
+    </select>
+
+    <select id='XtmDepartSelect' parameterClass='XtmDepart' resultMap='XtmDepartResult'>
+      select
+      pra1,
+      pra2,
+      pra3,
+      pra4,
+      pra5,
+      pra6,
+      pra7,
+      pra8,
+      pra9,
+      pra10,
+      '' as ComplexName,
+      '' as Pri,
+      '' as ParentName
+      from	pra34 a
+      where pra1=#Did#
+    </select>
+
+    <insert id='XtmDepartInsert' parameterClass='XtmDepart'>
+      insert into pra34
+      (
+      pra4,
+      pra2,
+      pra3,
+      pra5,
+      pra6,
+      pra7,
+      pra8
+      )
+      values
+      (
+      #ParentId#,
+      #DepartCode#,
+      #DepartName#,
+      #DepartLayer#,
+      #Status#,
+      #SysUserId#,
+      getdate()
+      )
+      <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as pra1</selectKey>
+    </insert>
+
+    <update id='XtmDepartUpdate' parameterClass='XtmDepart'>
+      update pra34 set
+      pra3=#DepartName#,
+      pra4=#ParentId#,
+      pra5=#DepartLayer#,
+      pra6=#Status#,
+      pra9=#SysUserId#,
+      pra10=getdate()
+      where
+      pra1=#Did#
+    </update>
+
+    <delete id='XtmDepartDelete' parameterClass='XtmDepart'>
+      delete from pra34
+      where
+      pra1=#Did#
+    </delete>
+  </statements>
+</sqlMap>

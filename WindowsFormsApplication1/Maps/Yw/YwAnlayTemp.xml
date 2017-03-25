@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="CwCalTemp"   type="HuiYuIfo.PiccFQP1.Entity.Yw.CwCalTemp, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='CwCalTempResult' class='CwCalTemp'>
+      <result property="YwyCode" column="YwyCode" />
+      <result property="Zdxje" column="Zdxje" />
+    </resultMap>
+  </resultMaps>
+
+  <statements>
+    
+    <select id='YwAnlayTempList' parameterClass='YwData' resultMap='YwAnlayResult'>
+      select
+      dta9 as YwyCode,
+      sum(Zdxje) as Zdxje
+      from	dta20 a
+      where dta9=#Ywy# and dta69 &gt;= #BegD# and dta69 &lt; #EndD#
+    </select>
+
+  
+
+  </statements>
+</sqlMap>

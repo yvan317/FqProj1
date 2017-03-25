@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="XtmUserPri"   type="HuiYuIfo.PiccFQP1.Entity.Xtm.XtmUserPri, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='XtmUserPriResult' class='XtmUserPri'>
+      <result property="Did" column="upr1" />
+      <result property="UserId" column="upr2" />
+      <result property="PriType" column="upr3" />
+      <result property="PriId" column="upr4" />
+      <result property="PriVal" column="upr5" />
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <select id='XtmUserPriPage' parameterClass='XtmUserPri' resultMap='XtmUserPriResult'>
+      select
+      upr1,
+      upr2,
+      upr3,
+      upr4,
+      upr5
+
+      from
+      (
+      select
+      row_number() over (order by upr2 )as rownum,
+      upr1,
+      upr2,
+      upr3,
+      upr4,
+      upr5
+
+      from	upr28 a
+      <dynamic prepend="WHERE">
+        <isNotEqual prepend="and" property="UserId" compareValue="0">
+          upr2=#UserId#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="PriType">
+          upr3=#PriType#
+        </isNotEmpty>
+
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='XtmUserPriList' parameterClass='XtmUserPri' resultMap='XtmUserPriResult'>
+      select
+      upr1,
+      upr2,
+      upr3,
+      upr4,
+      upr5
+
+      from	upr28 a
+      <dynamic prepend="WHERE">
+        <isNotEqual prepend="and" property="UserId" compareValue="0">
+          upr2=#UserId#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="PriType">
+          upr3=#PriType#
+        </isNotEmpty>
+
+      </dynamic>
+      order by upr2
+    </select>
+
+    <select id='XtmUserPriCount' parameterClass='XtmUserPri' resultType='int'>
+      select
+      count(*)
+      from	upr28 a
+      <dynamic prepend="WHERE">
+        <isNotEqual prepend="and" property="UserId" compareValue="0">
+          upr2=#UserId#
+        </isNotEqual>
+        <isNotEmpty prepend="and" property="PriType">
+          upr3=#PriType#
+        </isNotEmpty>
+
+      </dynamic>
+    </select>
+
+    <select id='XtmUserPriSelect' parameterClass='XtmUserPri' resultMap='XtmUserPriResult'>
+      select
+      upr1,
+      upr2,
+      upr3,
+      upr4,
+      upr5
+
+      from	upr28 a
+      where upr1=#Did#
+    </select>
+
+    <insert id='XtmUserPriInsert' parameterClass='XtmUserPri'>
+      insert into upr28
+      (
+      upr2,
+      upr3,
+      upr4,
+      upr5
+
+
+      )
+      values
+      (
+      #UserId#,
+      #PriType#,
+      #PriId#,
+      #PriVal#
+
+
+      )
+      <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as upr1</selectKey>
+    </insert>
+
+    <update id='XtmUserPriUpdate' parameterClass='XtmUserPri'>
+      update upr28 set
+      upr2=#UserId#,
+      upr3=#PriType#,
+      upr4=#PriId#,
+      upr5=#PriVal#
+
+
+      where
+      upr1=#Did#
+    </update>
+
+    <delete id='XtmUserPriDelete' parameterClass='XtmUserPri'>
+      delete from upr28
+      where
+      upr2=#UserId# and upr3=#PriType#
+    </delete>
+
+    <delete id='XtmUserPriDeleteAll' parameterClass='XtmUserPri'>
+      delete from upr28
+      where
+      upr2=#UserId# 
+    </delete>
+  </statements>
+</sqlMap>

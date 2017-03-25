@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2DE517D2-7582-4EEC-B520-FA0AEEAE7061}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HuiYuIfo.PiccFQP1.Web</RootNamespace>
+    <AssemblyName>HuiYuIfo.PiccFQP1.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Css\style.css" />
+    <Content Include="Content\Img\bg.gif" />
+    <Content Include="Content\Config\RuleConfig.xml" />
+    <Content Include="Content\Css\colorbox.css" />
+    <Content Include="Content\Css\edit.css" />
+    <Content Include="Content\Css\img\diy\1_close.png" />
+    <Content Include="Content\Css\img\diy\1_open.png" />
+    <Content Include="Content\Css\img\diy\2.png" />
+    <Content Include="Content\Css\img\diy\3.png" />
+    <Content Include="Content\Css\img\diy\4.png" />
+    <Content Include="Content\Css\img\diy\5.png" />
+    <Content Include="Content\Css\img\diy\6.png" />
+    <Content Include="Content\Css\img\diy\7.png" />
+    <Content Include="Content\Css\img\diy\8.png" />
+    <Content Include="Content\Css\img\diy\9.png" />
+    <Content Include="Content\Css\img\line_conn.gif" />
+    <Content Include="Content\Css\img\loading.gif" />
+    <Content Include="Content\Css\img\zTreeStandard.gif" />
+    <Content Include="Content\Css\img\zTreeStandard.png" />
+    <Content Include="Content\Css\list.css" />
+    <Content Include="Content\Css\uploadify.css" />
+    <Content Include="Content\Css\zTreeStyle.css" />
+    <Content Include="Content\Img\add.png" />
+    <Content Include="Content\Img\close.png" />
+    <Content Include="Content\Img\comfirm.png" />
+    <Content Include="Content\Img\controlpanel.gif" />
+    <Content Include="Content\Img\create.png" />
+    <Content Include="Content\Img\delete.gif" />
+    <Content Include="Content\Img\delete2.gif" />
+    <Content Include="Content\Img\edit.gif" />
+    <Content Include="Content\Img\export.png" />
+    <Content Include="Content\Img\grip.gif" />
+    <Content Include="Content\Img\huiyu.png" />
+    <Content Include="Content\Img\import.png" />
+    <Content Include="Content\Img\loadbg.jpg" />
+    <Content Include="Content\Img\loginbg.jpg" />
+    <Content Include="Content\Img\loginbg1.jpg" />
+    <Content Include="Content\Img\loginbg11.jpg" />
+    <Content Include="Content\Img\logout.gif" />
+    <Content Include="Content\Img\maintenance.png" />
+    <Content Include="Content\Img\print.png" />
+    <Content Include="Content\Img\save.png" />
+    <Content Include="Content\Img\select.gif" />
+    <Content Include="Content\Img\seperateEnd.gif" />
+    <Content Include="Content\Img\seperatek.gif" />
+    <Content Include="Content\Img\seperateS.gif" />
+    <Content Include="Content\Img\seperateStart.gif" />
+    <Content Include="Content\Img\show.png" />
+    <Content Include="Content\Img\splitbar_collapse_h.gif" />
+    <Content Include="Content\Img\splitbar_expand_h.gif" />
+    <Content Include="Content\Img\zz.png" />
+    <Content Include="Content\Img\_L.gif" />
+    <Content Include="Content\Img\_R.gif" />
+    <Content Include="Content\Js\calendar.js" />
+    <Content Include="Content\Js\ChunkFive_400.font.js" />
+    <Content Include="Content\Js\cufon-yui.js" />
+    <Content Include="Content\Js\edit.js" />
+    <Content Include="Content\Js\jquery.js" />
+    <Content Include="Content\Js\jquery.ztree.all.min.js" />
+    <Content Include="Content\Js\lang\zh-cn.js" />
+    <Content Include="Content\Js\list.js" />
+    <Content Include="Content\Js\skin\datePicker.gif" />
+    <Content Include="Content\Js\skin\default\datepicker.css" />
+    <Content Include="Content\Js\skin\default\dateselect.gif" />
+    <Content Include="Content\Js\skin\default\glass-bg.gif" />
+    <Content Include="Content\Js\skin\default\hd-sprite.gif" />
+    <Content Include="Content\Js\skin\default\img.gif" />
+    <Content Include="Content\Js\skin\default\left-btn.gif" />
+    <Content Include="Content\Js\skin\default\left-btn2.gif" />
+    <Content Include="Content\Js\skin\default\right-btn.gif" />
+    <Content Include="Content\Js\skin\default\right-btn2.gif" />
+    <Content Include="Content\Js\skin\WdatePicker.css" />
+    <Content Include="Content\Js\skin\whyGreen\bg.jpg" />
+    <Content Include="Content\Js\skin\whyGreen\datepicker.css" />
+    <Content Include="Content\Js\skin\whyGreen\img.gif" />
+    <Content Include="Content\Js\uploadify\jquery.uploadify.min.js" />
+    <Content Include="Content\Js\uploadify\uploadify-cancel.png" />
+    <Content Include="Content\Js\uploadify\uploadify.swf" />
+    <Content Include="Content\Js\WdatePicker.js" />
+    <Content Include="Content\Js\开发包\lang\en.js" />
+    <Content Include="Content\Js\开发包\lang\zh-cn.js" />
+    <Content Include="Content\Js\开发包\lang\zh-tw.js" />
+    <Content Include="Content\Js\开发包\readme.txt" />
+    <Content Include="Content\Js\开发包\skin\datePicker.gif" />
+    <Content Include="Content\Js\开发包\skin\default\datepicker.css" />
+    <Content Include="Content\Js\开发包\skin\default\img.gif" />
+    <Content Include="Content\Js\开发包\skin\WdatePicker.css" />
+    <Content Include="Content\Js\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="Content\Js\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="Content\Js\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="Index\AjaxPage.aspx" />
+    <Content Include="Index\content.htm" />
+    <Content Include="Index\Menu.aspx" />
+    <Content Include="Index\ModifyPwd.aspx" />
+    <Content Include="Index\Top.aspx" />
+    <Content Include="Index\Transfer.aspx" />
+    <Content Include="Index\Welcome.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Maps\dll.xml" />
+    <Content Include="Maps\Xtm\XtmConfig.xml" />
+    <Content Include="Maps\Xtm\XtmDepart.xml" />
+    <Content Include="Maps\Xtm\XtmMenu.xml" />
+    <Content Include="Maps\Xtm\XtmMenuPri.xml" />
+    <Content Include="Maps\Xtm\XtmUser.xml" />
+    <Content Include="Maps\Xtm\XtmUserPri.xml" />
+    <Content Include="Maps\Yw\Xtm_txm.xml" />
+    <Content Include="Maps\Yw\YwAnlay.xml" />
+    <Content Include="Maps\Yw\YwAttach.xml" />
+    <Content Include="Maps\Yw\YwCyh.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Maps\Yw\YwData.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Maps\Yw\YwSpec.xml" />
+    <Content Include="Maps\Yw\YwAnlayTemp.xml" />
+    <Content Include="Maps\Yw\YwTxjs.xml" />
+    <Content Include="Report\DataQueryList.aspx" />
+    <Content Include="Report\HistoryQueryList.aspx" />
+    <Content Include="Report\YwyDataShow.aspx" />
+    <Content Include="Report\YwyQueryList.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+    <Content Include="Xtm\BaseEdit.aspx" />
+    <Content Include="Xtm\ConfigEdit.aspx" />
+    <Content Include="Xtm\DepartEdit.aspx" />
+    <Content Include="Xtm\DepartList.aspx" />
+    <Content Include="Xtm\MenuPriEdit.aspx" />
+    <Content Include="Xtm\UserEdit.aspx" />
+    <Content Include="Xtm\UserList.aspx" />
+    <Content Include="Xtm\UserPriEdit.aspx" />
+    <Content Include="Yw\CbComfirmEdit.aspx" />
+    <Content Include="Yw\CbComfirmList.aspx" />
+    <Content Include="Yw\CbCreate.aspx" />
+    <Content Include="Yw\cbDataEdit.aspx" />
+    <Content Include="Yw\CbDataList.aspx" />
+    <Content Include="Yw\CbImport.aspx" />
+    <Content Include="Yw\CbShowAtt.aspx" />
+    <Content Include="Yw\ChangeQueryList.aspx" />
+    <Content Include="Yw\ChargeEdit.aspx" />
+    <Content Include="Yw\ChargeImport.aspx" />
+    <Content Include="Yw\ChargeList.aspx" />
+    <Content Include="Yw\CwAnalyEdit.aspx" />
+    <Content Include="Yw\CwAnalyList.aspx" />
+    <Content Include="Yw\CwComfirmEdit.aspx" />
+    <Content Include="Yw\CwComfirmList.aspx" />
+    <Content Include="Yw\CwFyAnaly.aspx" />
+    <Content Include="Yw\SpecEdit.aspx" />
+    <Content Include="Yw\SpecImport.aspx" />
+    <Content Include="Yw\SpecList.aspx" />
+    <Content Include="Yw\TxjsEdit.aspx" />
+    <Content Include="Yw\TxjsImport.aspx" />
+    <Content Include="Yw\TxjsList.aspx" />
+    <Content Include="Yw\TxmEdit.aspx" />
+    <Content Include="Yw\TxmList.aspx" />
+    <Content Include="Yw\YwyDataEdit.aspx" />
+    <Content Include="Yw\YwyDataList.aspx" />
+    <Content Include="Yw\YwyShowAtt.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index\AjaxPage.aspx.cs">
+      <DependentUpon>AjaxPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index\AjaxPage.aspx.designer.cs">
+      <DependentUpon>AjaxPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index\JsonHelper.cs" />
+    <Compile Include="Index\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index\ModifyPwd.aspx.cs">
+      <DependentUpon>ModifyPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index\ModifyPwd.aspx.designer.cs">
+      <DependentUpon>ModifyPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index\NodeData.cs" />
+    <Compile Include="Index\TimeOut.cs" />
+    <Compile Include="Index\Top.aspx.cs">
+      <DependentUpon>Top.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index\Top.aspx.designer.cs">
+      <DependentUpon>Top.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index\Transfer.aspx.cs">
+      <DependentUpon>Transfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index\Transfer.aspx.designer.cs">
+      <DependentUpon>Transfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index\Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index\Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\DataQueryList.aspx.cs">
+      <DependentUpon>DataQueryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\DataQueryList.aspx.designer.cs">
+      <DependentUpon>DataQueryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\HistoryQueryList.aspx.cs">
+      <DependentUpon>HistoryQueryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\HistoryQueryList.aspx.designer.cs">
+      <DependentUpon>HistoryQueryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\YwyDataShow.aspx.cs">
+      <DependentUpon>YwyDataShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\YwyDataShow.aspx.designer.cs">
+      <DependentUpon>YwyDataShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\YwyQueryList.aspx.cs">
+      <DependentUpon>YwyQueryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\YwyQueryList.aspx.designer.cs">
+      <DependentUpon>YwyQueryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Xtm\BaseEdit.aspx.cs">
+      <DependentUpon>BaseEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Xtm\BaseEdit.aspx.designer.cs">
+      <DependentUpon>BaseEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Xtm\ConfigEdit.aspx.cs">
+      <DependentUpon>ConfigEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Xtm\ConfigEdit.aspx.designer.cs">
+      <DependentUpon>ConfigEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Xtm\DepartEdit.aspx.cs">
+      <DependentUpon>DepartEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Xtm\DepartEdit.aspx.designer.cs">
+      <DependentUpon>DepartEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Xtm\DepartList.aspx.cs">
+      <DependentUpon>DepartList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Xtm\DepartList.aspx.designer.cs">
+      <DependentUpon>DepartList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Xtm\MenuPriEdit.aspx.cs">
+      <DependentUpon>MenuPriEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Xtm\MenuPriEdit.aspx.designer.cs">
+      <DependentUpon>MenuPriEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Xtm\UserEdit.aspx.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Xtm\UserEdit.aspx.designer.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Xtm\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Xtm\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Xtm\UserPriEdit.aspx.cs">
+      <DependentUpon>UserPriEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Xtm\UserPriEdit.aspx.designer.cs">
+      <DependentUpon>UserPriEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\CbComfirmEdit.aspx.cs">
+      <DependentUpon>CbComfirmEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\CbComfirmEdit.aspx.designer.cs">
+      <DependentUpon>CbComfirmEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\CbComfirmList.aspx.cs">
+      <DependentUpon>CbComfirmList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\CbComfirmList.aspx.designer.cs">
+      <DependentUpon>CbComfirmList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\CbCreate.aspx.cs">
+      <DependentUpon>CbCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\CbCreate.aspx.designer.cs">
+      <DependentUpon>CbCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\cbDataEdit.aspx.cs">
+      <DependentUpon>cbDataEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\cbDataEdit.aspx.designer.cs">
+      <DependentUpon>cbDataEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\CbDataList.aspx.cs">
+      <DependentUpon>CbDataList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\CbDataList.aspx.designer.cs">
+      <DependentUpon>CbDataList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\CbImport.aspx.cs">
+      <DependentUpon>CbImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\CbImport.aspx.designer.cs">
+      <DependentUpon>CbImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\CbShowAtt.aspx.cs">
+      <DependentUpon>CbShowAtt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\CbShowAtt.aspx.designer.cs">
+      <DependentUpon>CbShowAtt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\ChangeQueryList.aspx.cs">
+      <DependentUpon>ChangeQueryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\ChangeQueryList.aspx.designer.cs">
+      <DependentUpon>ChangeQueryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\ChargeEdit.aspx.cs">
+      <DependentUpon>ChargeEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\ChargeEdit.aspx.designer.cs">
+      <DependentUpon>ChargeEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\ChargeImport.aspx.cs">
+      <DependentUpon>ChargeImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\ChargeImport.aspx.designer.cs">
+      <DependentUpon>ChargeImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\ChargeList.aspx.cs">
+      <DependentUpon>ChargeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\ChargeList.aspx.designer.cs">
+      <DependentUpon>ChargeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\CwAnalyEdit.aspx.cs">
+      <DependentUpon>CwAnalyEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\CwAnalyEdit.aspx.designer.cs">
+      <DependentUpon>CwAnalyEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\CwAnalyList.aspx.cs">
+      <DependentUpon>CwAnalyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\CwAnalyList.aspx.designer.cs">
+      <DependentUpon>CwAnalyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\CwComfirmEdit.aspx.cs">
+      <DependentUpon>CwComfirmEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\CwComfirmEdit.aspx.designer.cs">
+      <DependentUpon>CwComfirmEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\CwComfirmList.aspx.cs">
+      <DependentUpon>CwComfirmList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\CwComfirmList.aspx.designer.cs">
+      <DependentUpon>CwComfirmList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\CwFyAnaly.aspx.cs">
+      <DependentUpon>CwFyAnaly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\CwFyAnaly.aspx.designer.cs">
+      <DependentUpon>CwFyAnaly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\SpecEdit.aspx.cs">
+      <DependentUpon>SpecEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\SpecEdit.aspx.designer.cs">
+      <DependentUpon>SpecEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\SpecImport.aspx.cs">
+      <DependentUpon>SpecImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\SpecImport.aspx.designer.cs">
+      <DependentUpon>SpecImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\SpecList.aspx.cs">
+      <DependentUpon>SpecList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\SpecList.aspx.designer.cs">
+      <DependentUpon>SpecList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\TxjsEdit.aspx.cs">
+      <DependentUpon>TxjsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\TxjsEdit.aspx.designer.cs">
+      <DependentUpon>TxjsEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\TxjsImport.aspx.cs">
+      <DependentUpon>TxjsImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\TxjsImport.aspx.designer.cs">
+      <DependentUpon>TxjsImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\TxjsList.aspx.cs">
+      <DependentUpon>TxjsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\TxjsList.aspx.designer.cs">
+      <DependentUpon>TxjsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\TxmEdit.aspx.cs">
+      <DependentUpon>TxmEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\TxmEdit.aspx.designer.cs">
+      <DependentUpon>TxmEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\TxmList.aspx.cs">
+      <DependentUpon>TxmList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\TxmList.aspx.designer.cs">
+      <DependentUpon>TxmList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\UploadHandler.ashx.cs">
+      <DependentUpon>UploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\YwyDataEdit.aspx.cs">
+      <DependentUpon>YwyDataEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\YwyDataEdit.aspx.designer.cs">
+      <DependentUpon>YwyDataEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\YwyDataList.aspx.cs">
+      <DependentUpon>YwyDataList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\YwyDataList.aspx.designer.cs">
+      <DependentUpon>YwyDataList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yw\YwyShowAtt.aspx.cs">
+      <DependentUpon>YwyShowAtt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yw\YwyShowAtt.aspx.designer.cs">
+      <DependentUpon>YwyShowAtt.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="database.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="providers.config" />
+    <Content Include="SqlMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Controller\HuiYuIfo.Framework.Controller.csproj">
+      <Project>{DE3BBFC2-791E-4736-AC9F-D8FC980BBFD0}</Project>
+      <Name>HuiYuIfo.Framework.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Core\HuiYuIfo.Framework.Core.csproj">
+      <Project>{362DE99E-57E2-4CBC-8A9A-36E666879A4F}</Project>
+      <Name>HuiYuIfo.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Dao\HuiYuIfo.Framework.Dao.csproj">
+      <Project>{689977C2-D25F-4C3F-BC7D-82A2014B4A91}</Project>
+      <Name>HuiYuIfo.Framework.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Entity\HuiYuIfo.Framework.Entity.csproj">
+      <Project>{424FC25B-1800-4833-A638-0DAC3AD81E1F}</Project>
+      <Name>HuiYuIfo.Framework.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Library\HuiYuIfo.Framework.Library.csproj">
+      <Project>{F7E3AD9A-40B8-462D-B805-D25412BD258A}</Project>
+      <Name>HuiYuIfo.Framework.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Task\HuiYuIfo.Framework.Task.csproj">
+      <Project>{3677E04D-83E7-4144-B1CE-A96CDB1CC365}</Project>
+      <Name>HuiYuIfo.Framework.Task</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.UiProcess\HuiYuIfo.Framework.UiProcess.csproj">
+      <Project>{2970767C-ED95-45DC-87C4-A10F66D741B1}</Project>
+      <Name>HuiYuIfo.Framework.UiProcess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HuiYuIfo.Framework\HuiYuIfo.Framework.Web\HuiYuIfo.Framework.Web.csproj">
+      <Project>{A9C91F83-C0BD-468C-A752-E1AF770E72CC}</Project>
+      <Name>HuiYuIfo.Framework.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HuiYuIfo.PiccFQP1.Controller\HuiYuIfo.PiccFQP1.Controller.csproj">
+      <Project>{17C318DA-86C6-48B5-8667-31E1FD9786AA}</Project>
+      <Name>HuiYuIfo.PiccFQP1.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HuiYuIfo.PiccFQP1.Entity\HuiYuIfo.PiccFQP1.Entity.csproj">
+      <Project>{71BCF619-B5F9-49D2-9805-4162DB56ACBD}</Project>
+      <Name>HuiYuIfo.PiccFQP1.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Yw\UploadHandler.ashx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10472</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

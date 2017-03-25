@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <typeAlias alias="YwSpec"   type="HuiYuIfo.PiccFQP1.Entity.Yw.YwSpec, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+    <resultMap id='YwSpecResult' class='YwSpec'>
+      <result property="Did" column="tsd1" />
+      <result property="SpecName" column="tsd2" />
+      <result property="Syxfv" column="tsd3" />
+      <result property="Jqxfv" column="tsd4" />
+      <result property="CreateId" column="tsd5" />
+      <result property="CreateDate" column="tsd6" />
+      <result property="ModifyId" column="tsd7" />
+      <result property="ModifyDate" column="tsd8" />
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <select id='YwSpecPage' parameterClass='YwSpec' resultMap='YwSpecResult'>
+      select
+      tsd1,
+      tsd2,
+      tsd3,
+      tsd4,
+      tsd5,
+      tsd6,
+      tsd7,
+      tsd8
+
+      from
+      (
+      select
+      row_number() over (order by tsd2 )as rownum,
+      tsd1,
+      tsd2,
+      tsd3,
+      tsd4,
+      tsd5,
+      tsd6,
+      tsd7,
+      tsd8
+
+      from	tsd90 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="SpecName">
+          tsd2=#SpecName#
+        </isNotEmpty>
+
+      </dynamic>
+      )
+      as a
+      where rownum&gt;#Begin# and rownum&lt;=#End#
+    </select>
+
+    <select id='YwSpecList' parameterClass='YwSpec' resultMap='YwSpecResult'>
+      select
+      tsd1,
+      tsd2,
+      tsd3,
+      tsd4,
+      tsd5,
+      tsd6,
+      tsd7,
+      tsd8
+
+      from	tsd90 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="SpecName">
+          tsd2=#SpecName#
+        </isNotEmpty>
+
+      </dynamic>
+      order by tsd2
+    </select>
+
+    <select id='YwSpecCount' parameterClass='YwSpec' resultType='int'>
+      select
+      count(*)
+      from	tsd90 a
+      <dynamic prepend="WHERE">
+        <isNotEmpty prepend="and" property="SpecName">
+          tsd2=#SpecName#
+        </isNotEmpty>
+
+      </dynamic>
+    </select>
+
+    <select id='YwSpecSelect' parameterClass='YwSpec' resultMap='YwSpecResult'>
+      select
+      tsd1,
+      tsd2,
+      tsd3,
+      tsd4,
+      tsd5,
+      tsd6,
+      tsd7,
+      tsd8
+
+      from	tsd90 a
+      where tsd1=#Did#
+    </select>
+
+    <insert id='YwSpecInsert' parameterClass='YwSpec'>
+      insert into tsd90
+      (
+      tsd2,
+      tsd3,
+      tsd4,
+      tsd5,
+      tsd6
+      )
+      values
+      (
+      #SpecName#,
+      #Syxfv#,
+      #Jqxfv#,
+      #SysUserId#,
+      getdate()
+      )
+      <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as tsd1</selectKey>
+    </insert>
+
+    <update id='YwSpecUpdate' parameterClass='YwSpec'>
+      update tsd90 set
+      tsd3=#Syxfv#,
+      tsd4=#Jqxfv#,
+      tsd7=#SysUserId#,
+      tsd8=getdate()
+      where
+      tsd1=#Did#
+    </update>
+
+    <delete id='YwSpecDelete' parameterClass='YwSpec'>
+      delete from tsd90
+      where
+      tsd1=#Did#
+    </delete>
+  </statements>
+</sqlMap>

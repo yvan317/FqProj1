@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+a:link {  text-decoration:none; color:Black;} 
+a:hover { text-decoration: none; color:Black; cursor:pointer;} 
+a:active { text-decoration: none; color:Black;} 
+a:visited {text-decoration: none; color:Black;} 
+
+html,body{font-size:13px;font-family:"Microsoft Yahei", Tahoma, "SimSun" ;padding:0px;margin:0px;}
+img{border:none;vertical-align:middle}
+.input{border:1px solid gray;line-height:18px;height:20px;padding-left:3px;width:150px;}
+.gvinput{border:1px solid gray;line-height:18px;height:20px;padding-left:3px;}
+.date{border:1px solid gray;line-height:18px;height:20px;padding-left:3px;width:90px;}
+.combut{padding-left:10px;padding-right:10px;}
+.but {border: #7b9ebd 1px solid; padding:3px;width:100px;}
+.linkbut{border:none;padding:3px;}
+
+.navTitle{font-size:14px;font-weight:bold;}
+.panCom{width:99%;background-color:#E6ECFA;border:1px solid black;text-align:right;padding:0px;margin:0px;}
+.panCom a:link{text-decoration:none;}
+.panCom a:visited{text-decoration:none;}
+.panCom a:active{text-decoration:none;}
+.panCom a:hover{text-decoration:none;cursor:pointer;} 
+
+.panCon{margin:10px 0px 10px 0px;padding:0px}
+.tableCon{width:99%;border-top:1px solid black;border-right:1px solid black;background-color:#E6ECFA;padding:0px;margin:0px;}
+.tableCon tr{vertical-align:middle;padding:0px;margin:0px;}
+.tableCon td{padding:5px;border-bottom:1px solid black;border-bottom:1px solid black;border-left:1px solid black;}
+
+.list{width:99%;margin:10px 0px 10px 0px;}
+.list tr{vertical-align:middle;text-align:center;border:1px solid black;}
+.list th{background-color:#388E8E;color:White;line-height:20px;height:20px;padding:2px;font-weight:bold;}
+.list td{padding:1px;border-right:1px solid black;}
+.list tr.alt td{background:#E6ECFA;}
+.list tr.click td{background-color:#388E8E;color:White;}

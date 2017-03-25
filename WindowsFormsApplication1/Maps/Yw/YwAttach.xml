@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Simple" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+  <typeAlias alias="YwAttach"   type="HuiYuIfo.PiccFQP1.Entity.Yw.YwAttach, HuiYuIfo.PiccFQP1.Entity" />
+  </alias>
+
+  <resultMaps>
+  <resultMap id='YwAttachResult' class='YwAttach'>
+    <result property="Did" column="att1" />
+    <result property="Dic" column="att2" />
+    <result property="FileN" column="att3" />
+    <result property="Dataid" column="att4" />
+    <result property="Type" column="att5" />
+    <result property="RealName" column="att6" />
+  </resultMap>
+  </resultMaps>
+
+    <statements>
+  <select id='YwAttachPage' parameterClass='YwAttach' resultMap='YwAttachResult'>
+   
+  </select>
+
+  <select id='YwAttachList' parameterClass='YwAttach' resultMap='YwAttachResult'>
+    select
+    att1,
+    att2,
+    att3,
+    att4,
+    att5,
+    att6
+    from	att10 a
+    where
+    att4=#Dataid#
+    and att5=#Type#
+    order by att4
+  </select>
+
+  <select id='YwAttachCount' parameterClass='YwAttach' resultType='int'>
+    select
+    count(*)
+    from	att10 a
+    where
+    att4=#Dataid# and att5=#Type#
+  </select>
+
+  <select id='YwAttachSelect' parameterClass='YwAttach' resultMap='YwAttachResult'>
+    select
+    att1,
+    att2,
+    att3,
+    att4,
+    att5,
+    att6
+
+    from	att10 a
+    where att1=#Did#
+  </select>
+
+  <insert id='YwAttachInsert' parameterClass='YwAttach' >
+    insert into att10
+    (
+    att2,
+    att3,
+    att4,
+    att5,
+    att6
+    )
+    values
+    (
+    #Dic#,
+    #FileN#,
+    #Dataid#,
+    #Type#,
+    #RealName#
+    )
+    <selectKey property="Did"  type="post" resultClass="int">Select cast(@@IDENTITY as int) as att1</selectKey>
+  </insert>
+  <delete id='YwAttachDeleteByDid' parameterClass='YwAttach'>
+    delete from att10
+    where
+    att1=#Did#
+  </delete>
+  <delete id='YwAttachDelete' parameterClass='YwAttach'>
+    delete from att10
+    where
+    att4=#Dataid#
+  </delete>
+  <delete id='YwAttachDeleteByType' parameterClass='YwAttach'>
+    delete from att10
+    where
+    att4=#Dataid# and att5=#Type#
+  </delete>
+</statements>
+</sqlMap>
